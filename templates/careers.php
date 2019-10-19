@@ -24,7 +24,7 @@
 				<div class="col-sm-12">
 					<?php $contact = get_field('contact_box'); ?>
 					<div class="contact-box float-right">
-						<h5 class = "gray">Contact</h5>
+						<h5>Contact</h5>
 						<p><a href = "<?php echo 'mailto:' . $contact['email']; ?>"><?php echo $contact['name']; ?></a><br><?php echo $contact['title']; ?></p>
 						<p><?php echo $contact['address']; ?></p>
 					</div><!-- .contact-box -->

@@ -3,71 +3,73 @@
 <?php get_header(); ?>
 <div id="contact">
 	<main class="site-main" id="main">	
-		<?php $hero = get_field('hero'); ?>
-		<section class="hero container-fluid position-relative" style = "background: url('<?php echo $hero['image']['url']; ?>');">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<h1 class = "text-white mb-0"><?php echo $hero['header']; ?></h1>
-					</div><!-- .col-sm-12 -->
-				</div><!-- .row -->	
-			</div>
-		</section><!-- .container-fluid -->
-
 		<section>
 			<div class="container mt-5 pb-5">
 				<div class="row">
-					<div class="col-md-5">
-						<h2 class="h3 mb-3">
-							Send us a message</h2>
+					
+					<div class="col-md-7">
+						<h2 class="h3 mb-3"><?php the_field('page_title'); ?></h2>
 						<!-- .h3 mb-3 -->
+						<p class = "mb-3"><?php the_field('page_copy') ?></p>
 						<?php echo do_shortcode('[ninja_form id=1]'); ?>
-					</div><!-- .col-md-5 -->
-					<div id = "waysToConnect" class="offset-md-1 col-md-6">
-						<?php $contact = get_field('contact_information');
-						//variables
-							$phone_icon = $contact['phone_icon']['url'];
-							$phone = get_field('phone', 'option');
-							$email = get_field('email', 'option');
-							$hours_icon = $contact['hours_icon']['url'];
-							$hours = get_field('hours', 'option');
-							$address_icon = $contact['address_icon']['url'];
-							$address1 = get_field('address_1', 'option');
-							$address2 = get_field('address_2', 'option');
-							$map = $contact['map_image']['url'];
+						<p><?php the_field('disclaimer'); ?></p>
+					</div><!-- .col-md-7 -->
+					
+					<div id = "locations" class="col-md-5">
+						<div class="location contact-box mb-3 w-100">
+							<h5>New Haven, CT</h5>
+						<?php
+						//vars
+						$addy1 = get_field('new_haven_address_line_1', 'option');
+						$addy2 = get_field('new_haven_address_line_2', 'option');
+						$phone = get_field('new_haven_phone_number', 'option');
+						$fax = get_field('new_haven_fax_number', 'option');
 						?>
-						<div id = "talk" class="row mb-4">
-							<div class="col-sm-2">
-								<img src = "<?php echo $phone_icon; ?>">
-							</div><!-- .col-sm-2 -->
-							<div class="col-sm-10">
-								<h5>Let's Talk</h5>
-								<a href = "tel:<?php echo $phone ?>"><?php echo $phone; ?></a>
-								<a href = "mailto:<?php echo $email ?>"><?php echo $email; ?></a>
-							</div><!-- .col-sm-10 -->
-						</div><!-- .row -->
-						<div id = "hours" class="row mb-4">
-							<div class="col-sm-2">
-								<img src = "<?php echo $hours_icon; ?>">
-							</div><!-- .col-sm-2 -->
-							<div class="col-sm-10">
-								<h5>Hours</h5>
-								<p class = "mb-0"><?php echo $hours; ?></p>
-							</div><!-- .col-sm-10 -->
-						</div><!-- .row -->
-						<div id = "address" class="row">
-							<div class="col-sm-2">
-								<img src = "<?php echo $address_icon; ?>">
-							</div><!-- .col-sm-2 -->
-							<div class="col-sm-10">
-								<h5>Address</h5>
-								<p><?php echo $address1; ?><br />
-								<?php echo $address2; ?><a class = "ml-2" target = "_blank" href="https://goo.gl/maps/RSKvXdwKdrCBTehD9">Map</a></p>
-							</div><!-- .col-sm-10 -->
-						</div><!-- .row -->
-						<a target = "_blank" href="https://goo.gl/maps/RSKvXdwKdrCBTehD9">
-						<img src="<?php echo $map; ?>" alt="Directions to Pixelstrike Creative"></img></a>
-					</div><!-- .col-md-6 -->
+							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
+							<a href = ''><button role = 'button' class = 'btn btn-primary light-blue-button'>Get Directions</button></a>
+						</div><!-- .location -->
+
+						<div class="location contact-box mb-3 w-100">
+							<h5>Hartford, CT</h5>
+						<?php
+						//vars
+						$addy1 = get_field('hartford_address_line_1', 'option');
+						$addy2 = get_field('hartford_address_line_2', 'option');
+						$phone = get_field('hartford_phone_number', 'option');
+						$fax = get_field('hartford_fax_number', 'option');
+						?>
+							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
+							<a href = ''><button role = 'button' class = 'btn btn-primary light-blue-button'>Get Directions</button></a>
+						</div><!-- .location -->
+
+						<div class="location contact-box mb-3 w-100">
+							<h5>Fairfield, CT</h5>
+						<?php
+						//vars
+						$addy1 = get_field('fairfield_address_line_1', 'option');
+						$addy2 = get_field('fairfield_address_line_2', 'option');
+						$phone = get_field('fairfield_phone_number', 'option');
+						$fax = get_field('fairfield_fax_number', 'option');
+						?>
+							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
+							<a href = ''><button role = 'button' class = 'btn btn-primary light-blue-button'>Get Directions</button></a>
+						</div><!-- .location -->
+
+						<div class="location contact-box mb-3 w-100">
+							<h5>White Plains, NY</h5>
+						<?php
+						//vars
+						$addy1 = get_field('white_plains_address_line_1', 'option');
+						$addy2 = get_field('white_plains_address_line_2', 'option');
+						$phone = get_field('white_plains_phone_number', 'option');
+						$fax = get_field('white_plains_fax_number', 'option');
+						?>
+							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
+							<a href = ''><button role = 'button' class = 'btn btn-primary light-blue-button'>Get Directions</button></a>
+						</div><!-- .location -->
+							
+					</div><!-- .col-md-5 -->
+				
 				</div><!-- .row -->
 			</div><!-- .container -->
 		</section>

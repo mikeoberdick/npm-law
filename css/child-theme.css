@@ -10849,7 +10849,8 @@ a {
   font-family: "Merriweather", sans-serif;
   color: #fff !important;
   background-color: #2E5786 !important;
-  border: 0; }
+  border: 0;
+  border-radius: 0; }
   .light-blue-button:hover {
     background-color: #213e60 !important; }
 
@@ -10891,6 +10892,8 @@ a {
   .navbar .nav-link {
     text-transform: uppercase;
     color: #ffffff;
+    text-decoration: none; }
+  .navbar .dropdown-item {
     text-decoration: none; }
   .navbar .dropdown-toggle:after {
     margin-left: 0.355em;
@@ -10944,7 +10947,7 @@ a {
 
 .contact-box {
   background: #f5f5f5;
-  padding: 15px;
+  padding: 20px;
   min-width: 250px; }
 
 #careers #openPositions hr {
@@ -10972,47 +10975,34 @@ a {
 .nf-form-cont .nf-form-fields-required {
   display: none; }
 
-.nf-form-cont .fName {
-  float: left;
-  width: 48%;
-  margin-right: 2%;
-  clear: none; }
-  @media (max-width: 991.98px) {
-    .nf-form-cont .fName {
-      float: none;
-      width: 100%;
-      margin-right: 0;
-      clear: both; } }
+.nf-form-cont .ninja-forms-req-symbol {
+  display: none; }
 
-.nf-form-cont .lName {
-  float: left;
-  width: 48%;
-  clear: none; }
-  @media (max-width: 991.98px) {
-    .nf-form-cont .lName {
-      float: none;
-      width: 100%;
-      clear: both; } }
+.nf-form-cont label {
+  color: #575757;
+  font-weight: 400 !important; }
 
-.nf-form-cont ::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  font-family: "Muli", sans-serif;
-  font-size: 12px; }
+.nf-form-cont input, .nf-form-cont select {
+  padding-left: 15px;
+  height: 45px !important;
+  border: solid 1px #2E5786; }
 
-.nf-form-cont ::-moz-placeholder {
-  /* Firefox 19+ */
-  font-family: "Muli", sans-serif;
-  font-size: 12px; }
+.nf-form-cont textarea {
+  padding-left: 15px;
+  border: solid 1px #2E5786; }
 
-.nf-form-cont :-ms-input-placeholder {
-  /* IE 10+ */
-  font-family: "Muli", sans-serif;
-  font-size: 12px; }
+.nf-form-cont .label-right .checkbox-wrap .nf-field-label {
+  width: 100% !important; }
 
-.nf-form-cont :-moz-placeholder {
-  /* Firefox 18- */
-  font-family: "Muli", sans-serif;
-  font-size: 12px; }
+.nf-form-cont .textarea-container {
+  margin-bottom: 0; }
+
+.nf-form-cont .checkbox-wrap .nf-field-element {
+  height: 30px; }
+
+.nf-form-cont input[type='checkbox'] {
+  height: 30px !important;
+  width: 20px !important; }
 
 /*------------------------------------------------*/
 /*---------------------[FOOTER]-------------------*/
