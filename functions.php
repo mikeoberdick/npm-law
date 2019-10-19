@@ -17,11 +17,10 @@ add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
 
-	// Get the theme data
-	$the_theme = wp_get_theme();
+// Get the theme data
+    $the_theme = wp_get_theme();
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_script( 'jquery');
-	wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -37,31 +36,18 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 add_filter('widget_text', 'do_shortcode');
 
 
-
-
-
 // *** Theme Styles *** \\
-
 function d4tw_enqueue_styles () {
-    wp_enqueue_style( 'Open Sans', 'https://fonts.googleapis.com/css?family=Open+Sans' );
-    wp_enqueue_style( 'AOS CSS', get_stylesheet_directory_uri() . '/aos/aos.css' );
+    wp_enqueue_style( 'Google Fonts', 'https://fonts.googleapis.com/css?family=Merriweather|Muli&display=swap' );
 }
 add_action('wp_enqueue_scripts', 'd4tw_enqueue_styles');
 
 
-
-
-
 // *** Theme Scripts *** \\
-
 function d4tw_enqueue_scripts () {
    wp_enqueue_script( 'D4TW Theme JS', get_stylesheet_directory_uri() . '/js/d4tw.js', array('jquery'), '1.0.0', true );
-   wp_enqueue_script( 'AOS JS', get_stylesheet_directory_uri() . '/aos/aos.js', array('jquery'), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'd4tw_enqueue_scripts' );
-
-
-
 
 
 // *** Advanced Custom Fields *** \\
@@ -77,29 +63,7 @@ if( function_exists('acf_add_options_page') ) {
     
 }
 
-//Register the Google Maps API for use with ACF
-function google_maps_scripts () {
-	if (is_page('contact')) {
-	   		wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB_LlgIpFpelPIbA25yjUi_dhCywFKKYco', array(), '3', true );
-			wp_enqueue_script( 'google-map-init', get_stylesheet_directory_uri() . '/js/google-maps.js', array('google-map', 'jquery'), '0.1', true );
-		}
-	}
-	
-add_action( 'wp_enqueue_scripts', 'google_maps_scripts' );
-
-function my_acf_google_map_api( $api ){
-	$api['key'] = 'AIzaSyB_LlgIpFpelPIbA25yjUi_dhCywFKKYco';
-	return $api;	
-}
-
-add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
-
-
-
-
-
 // *** D4TW Custom Dashboard *** \\
-
 function d4tw_add_dashboard_widget() {
 	add_meta_box('wp_dashboard_widget_1', 'Theme Details', 'd4tw_theme_info', 'dashboard', 'side', 'high');
   //wp_add_dashboard_widget('wp_dashboard_widget', 'Theme Details', 'd4tw_theme_info');
@@ -161,25 +125,7 @@ function d4tw_admin_css() {
 
 add_action('admin_head', 'd4tw_admin_css');
 
-
-
-
-
-// *** Custom Menus *** \\
-
-
-
-
-
-
-// *** Template Tags *** \\
-
-
-
-
-
 // *** User Tweaks & Permissions *** \\
-
 // Hide the admin toolbar for non-admins
 add_action('admin_init', 'd4tw_disable_admin_bar');
 
@@ -190,11 +136,7 @@ function d4tw_disable_admin_bar() {
 }
 
 
-
-
-
 // *** Widgets *** \\
-
 // Deregister Sidebars
 function d4tw_remove_sidebars () {
 	unregister_sidebar( 'statichero' );
@@ -205,63 +147,3 @@ function d4tw_remove_sidebars () {
 }
 
 add_action( 'widgets_init', 'd4tw_remove_sidebars', 11 );
-
-// Register Theme Sidebars
-function d4tw_sidebars() {
-
-    $args = array(
-        'id'            => 'footer_1',
-        'class'         => 'footer_1',
-        'name'          => 'Footer 1',
-        'description'   => 'This widget area will appear in the first position of the footer.',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h5 class="widgettitle">',
-        'after_title'   => '</h5>',
-    );
-    register_sidebar( $args );
-
-    $args = array(
-        'id'            => 'footer_2',
-        'class'         => 'footer_2',
-        'name'          => 'Footer 2',
-        'description'   => 'This widget area will appear in the second position of the footer.',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h5 class="widgettitle">',
-        'after_title'   => '</h5>',
-    );
-    register_sidebar( $args );
-
-    $args = array(
-        'id'            => 'footer_3',
-        'class'         => 'footer_3',
-        'name'          => 'Footer 3',
-        'description'   => 'This widget area will appear in the third position of the footer.',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h5 class="widgettitle">',
-        'after_title'   => '</h5>',
-    );
-    register_sidebar( $args );
-
-    $args = array(
-        'id'            => 'footer_4',
-        'class'         => 'footer_4',
-        'name'          => 'Footer 4',
-        'description'   => 'This widget area will appear in the fourth position of the footer.',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h5 class="widgettitle">',
-        'after_title'   => '</h5>',
-    );
-    register_sidebar( $args );
-
-}
-add_action( 'widgets_init', 'd4tw_sidebars' );
-
-
-
-
-
-// *** WooCommerce *** \\

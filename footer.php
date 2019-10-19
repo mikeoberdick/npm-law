@@ -6,67 +6,60 @@
  *
  * @package understrap
  */
-
-$the_theme = wp_get_theme();
-$container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <div id="js-heightControl" style="height: 0;">&nbsp;</div>
 
-<?php if ( is_active_sidebar( 'footer_1') || is_active_sidebar( 'footer_2') || is_active_sidebar( 'footer_3') || is_active_sidebar( 'footer_4') ) { ?>
-
-<div class="wrapper" id="wrapper-footer">
-
-	<div class="<?php echo esc_html( $container ); ?>">
-
-	<div id = "footerWidgets" class = "row">
-
-		<div class = "col-lg-3 col-sm-12">
-			<?php dynamic_sidebar('footer_1'); ?>
-		</div>
-		
-		<div class = "col-lg-3 col-sm-12">
-			<?php dynamic_sidebar('footer_2'); ?>
-		</div>
-		
-		<div class = "col-lg-3 col-sm-12">
-			<?php dynamic_sidebar('footer_3'); ?>
-		</div>
-		
-		<div class = "col-lg-3 col-sm-12">
-			<?php dynamic_sidebar('footer_4'); ?>
-		</div>
-
-	</div><!-- #footerWidgets -->
-
+<div id = "footer" class = "pt-5">
+	<div class="container">
+		<div id = "locations" class="row">
+			<div class="col-6 col-md-3">
+				<h6 class = "location text-center">New Haven</h6>
+				<?php
+				//vars
+				$addy1 = get_field('new_haven_address_line_1', 'option');
+				$addy2 = get_field('new_haven_address_line_2', 'option');
+				$phone = get_field('new_haven_phone_number', 'option');
+				?>
+				<p class = "text-center small"><?php echo $addy1 . '<br>' . $addy2 . '<br>Phone: ' . $phone ?></p>
+			</div><!--col-sm-3 -->
+			<div class="col-6 col-md-3">
+				<h6 class = "location text-center">Fairfield</h6>
+				<?php
+				//vars
+				$addy1 = get_field('fairfield_address_line_1', 'option');
+				$addy2 = get_field('fairfield_address_line_2', 'option');
+				$phone = get_field('fairfield_phone_number', 'option');
+				?>
+				<p class = "text-center small"><?php echo $addy1 . '<br>' . $addy2 . '<br>Phone: ' . $phone ?></p>
+			</div><!--col-sm-3 -->
+			<div class="col-6 col-md-3">
+				<h6 class = "location text-center">White Plains</h6>
+				<?php
+				//vars
+				$addy1 = get_field('white_plains_address_line_1', 'option');
+				$addy2 = get_field('white_plains_address_line_2', 'option');
+				$phone = get_field('white_plains_phone_number', 'option');
+				?>
+				<p class = "text-center small"><?php echo $addy1 . '<br>' . $addy2 . '<br>Phone: ' . $phone ?></p>
+			</div><!--col-sm-3 -->
+			<div class="col-6 col-md-3">
+				<h6 class = "location text-center">Hartford</h6>
+				<?php
+				//vars
+				$addy1 = get_field('harford_address_line_1', 'option');
+				$addy2 = get_field('harford_address_line_2', 'option');
+				$phone = get_field('harford_phone_number', 'option');
+				?>
+				<p class = "text-center small"><?php echo $addy1 . '<br>' . $addy2 . '<br>Phone: ' . $phone ?></p>
+			</div><!--col-sm-3 -->
+		</div><!-- .row -->
 	</div><!-- .container -->
 
-	<?php } ?>
-
-	<div id = "bottomFooter" class = "container-fluid">
-
-		<div class="row">
-
-			<div class="col-md-12">
-
-				<footer class="site-footer text-center" id="colophon">
-
-					<div class="site-info">
-					
-					<span>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></span><br />
-					<span>Website by <a href = "http://www.designs4theweb.com">Designs 4 The Web</a></span>
-
-					</div><!-- .site-info -->
-
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
-
-	</div><!-- .container-fluid -->
-
-</div><!-- wrapper end -->
+	<div id = "copyright" class="text-center mt-3 pb-3">
+		<span class = "small">&copy; <?php bloginfo( 'name' ); ?>. All rights reserved. <a href="#">Disclaimer</a><br />Website by <a class = "attribution" href = "http://www.designs4theweb.com">Designs 4 The Web</a></span>
+	</div><!-- #copyright -->
+</div><!-- #footer -->
 
 </div><!-- #page-wrapper -->
 

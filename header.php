@@ -20,14 +20,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri() . '/favicons/apple-touch-icon.png';?>">
-	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri() . '/favicons/favicon-32x32.png';?>">
-	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_stylesheet_directory_uri() . '/favicons/favicon-16x16.png';?>">
-	<link rel="manifest" href="<?php echo get_stylesheet_directory_uri() . '/favicons/manifest.json';?>">
-	<link rel="mask-icon" href="<?php echo get_stylesheet_directory_uri() . '/favicons/safari-pinned-tab.svg';?>" color="#334396">
-	<meta name="apple-mobile-web-app-title" content="Silver Mill Tours">
-	<meta name="application-name" content="Silver Mill Tours">
-	<meta name="msapplication-TileColor" content="#2d89ef">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
 
 	<?php wp_head(); ?>
@@ -43,6 +41,37 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
+		<div class = "container">
+			<div class="row py-3">
+				<div class="col-md-8">
+				<a rel = "home" class="navbar-brand" data-itemprop="url" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<?php $logo = get_field('logo', 'option'); ?>
+					<img id = "headerLogo" src = "<?php echo $logo['url']; ?>" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>">
+				</a>	
+				</div><!-- .col-md-8 -->
+				<div class="col-md-4 d-flex flex-column align-items-end">
+					<div id="headerSocial" class = "d-inline-flex mb-3">
+						<span class = "mr-2">CONTACT</span>
+						<div id="socialLinks" class = "d-inline-flex align-center">
+							<div class="social-link linkedin">
+								<i class="fa fa-linkedin" aria-hidden="true"></i>
+							</div><!-- .social-link -->
+							<div class="social-link facebook">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+							</div><!-- .social-link -->
+							<div class="social-link twitter">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</div><!-- .social-link -->
+						</div><!-- #socialLinks -->
+					</div><!-- #headerSocial -->
+					<div id="headerSearch">
+						<?php get_search_form(); ?>
+					</div><!-- #headerSearch -->
+				</div><!-- .col-md-4 -->
+			</div><!-- .row -->
+			
+		</div>
+
 		<nav class="navbar navbar-expand-md">
 
 			<div class="container">
@@ -51,10 +80,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<span class = "mobileToggle"><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
 				</button>
 					
-				<a rel = "home" class="navbar-brand" data-itemprop="url" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<img id = "headerLogo" src = "<?php the_field('company_logo', 'option'); ?>" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>">
-				</a>
-
 				<!-- The WordPress Menu goes here -->
 				<?php wp_nav_menu(
 					array(
