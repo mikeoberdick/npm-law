@@ -41,6 +41,11 @@ body {
 
 a {
 	color: $light-blue;
+	text-decoration: underline;
+}
+
+.gray {
+	color: $gray;
 }
 
 /*------------------------------------------------*/
@@ -94,6 +99,7 @@ a {
 	.nav-link {
 		text-transform: uppercase;
 		color: $white;
+		text-decoration: none;
 	}
 	.dropdown-toggle {
 		&:after {
@@ -136,11 +142,53 @@ a {
 /*------------------------------------------------*/
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
+#pageHeader {
+	background: url('../img/page_header.png');
+	height: 350px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	box-shadow: #22233fb8 0 0 0 500px inset;
+	h1 {
+		color: white;
+	}
+}
 
+.contact-box {
+	background: #f5f5f5;
+    padding: 15px;
+    min-width: 250px;
+}
+
+#careers {
+	#openPositions {
+		hr {
+			margin: 0 0 1rem 0;
+			border: 2px solid $light-blue;;
+		}
+	}
+	#callouts {
+		.callout {
+			hr {
+				margin: 1rem 0;
+				border: 3px solid $dark-blue;
+			}
+		}
+	}
+}
 
 /*------------------------------------------------*/
-/*--------------------[SIDEBAR]-------------------*/
+/*--------------------[IMAGES]--------------------*/
 /*------------------------------------------------*/
+
+.image-caption {
+	margin-top: 10px;
+	text-align: center;
+	color: #575757;
+}
 
 /*------------------------------------------------*/
 /*----------------------[ACF]---------------------*/

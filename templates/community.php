@@ -1,4 +1,4 @@
-<?php /* Template Name: About NPM */ ?>
+<?php /* Template Name: Community */ ?>
 
 <?php get_header(); ?>
 <section id="pageHeader">
@@ -11,7 +11,7 @@
 	</div><!-- .container -->
 </section><!-- #pageHeader -->
 
-<div id="about">
+<div id="community">
 	<main class="site-main" id="main">
 		
 		<?php $hero = get_field('hero'); ?>
@@ -136,5 +136,5 @@
 			</div>
 		</section><!-- #community -->
 	</main><!-- #main -->
-</div><!-- #about -->
+</div><!-- #community -->
 <?php get_footer(); ?>
