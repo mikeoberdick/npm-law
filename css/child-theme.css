@@ -10839,18 +10839,29 @@ a {
   color: #2E5786;
   text-decoration: underline; }
 
+p {
+  margin-bottom: 0; }
+
 .gray {
   color: #575757; }
+
+.invisible-ink {
+  display: none; }
+
+@media print {
+  .invisible-ink {
+    display: block; } }
 
 /*------------------------------------------------*/
 /*-------------------[BUTTONS]--------------------*/
 /*------------------------------------------------*/
 .light-blue-button {
-  font-family: "Merriweather", sans-serif;
+  font-family: "Muli", sans-serif;
+  font-weight: 600;
   color: #fff !important;
   background-color: #2E5786 !important;
   border: 0;
-  border-radius: 0; }
+  border-radius: 3px; }
   .light-blue-button:hover {
     background-color: #213e60 !important; }
 
@@ -10945,10 +10956,77 @@ a {
   #pageHeader h1 {
     color: white; }
 
+.site-main {
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+
 .contact-box {
   background: #f5f5f5;
   padding: 20px;
-  min-width: 250px; }
+  min-width: 250px;
+  margin-left: 1rem; }
+
+hr {
+  border-top: solid 3px #2E5786; }
+
+#about #principals h5 {
+  border-bottom: solid; }
+
+#about #serveAndRepresent {
+  border-bottom: solid #2E5786; }
+  #about #serveAndRepresent #clientsList {
+    height: 235px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    #about #serveAndRepresent #clientsList li {
+      color: #575757;
+      font-size: 1.2rem;
+      margin-bottom: 15px; }
+
+#memoriam .memorial .bio {
+  padding-bottom: 2rem;
+  border-bottom: solid 3px #2E5786;
+  margin-bottom: 2rem; }
+
+#singleAttorney .links i {
+  font-size: 1.5rem; }
+
+#singleAttorney #attorneyDetails {
+  padding: 25px;
+  background-color: #2e578629; }
+  #singleAttorney #attorneyDetails #practiceAreas a {
+    color: #000;
+    text-decoration: none; }
+
+#singleAttorney #contentSelector {
+  border-top: solid 1px #575757;
+  border-bottom: solid 1px #575757;
+  cursor: pointer; }
+
+#services #practiceAreas #serviceLinks .service-link {
+  border-bottom: solid 1px #cecece;
+  position: relative; }
+  #services #practiceAreas #serviceLinks .service-link:nth-of-type(1) {
+    border-top: solid 1px #cecece; }
+  #services #practiceAreas #serviceLinks .service-link i {
+    color: #2E5786;
+    font-size: .8rem;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  #services #practiceAreas #serviceLinks .service-link a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px 0 10px 25px; }
 
 #careers #openPositions hr {
   margin: 0 0 1rem 0;

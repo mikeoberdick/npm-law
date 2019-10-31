@@ -2,7 +2,7 @@
 
 <?php get_header(); ?>
 
-<div id="twentyFiveYears" class = "my-5">
+<div id="twentyFiveYears">
 	<main class="site-main" id="main">
 		<section class="container">
 			<div class="row">

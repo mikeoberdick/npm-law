@@ -17,7 +17,7 @@
 		<section class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h1 class = "h3 my-3 gray"><?php the_field('page_title'); ?></h1>
+					<h1 class = "h4 mb-3 gray"><?php the_field('page_title'); ?></h1>
 				</div><!-- .col-sm-12 -->
 			</div><!-- .row -->
 			<div class="row">
@@ -73,7 +73,7 @@
 					$copy = get_sub_field('copy');
 					?>
 
-				<div class="callout col-md-6 text-center mb-3">
+				<div class="callout col-md-6 text-center mt-3">
 					<img class = "mb-3" src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
 					<h6 class = "gray"><?php echo $title; ?></h6>
 					<hr>

@@ -1,17 +1,31 @@
-<?php /* Template Name: Contact */ ?>
+<?php /* Template Name: Service Detail */ ?>
 
 <?php get_header(); ?>
-<div id="contact">
+<div id="serviceDetail">
 	<main class="site-main" id="main">	
 		<section>
 			<div class="container">
 				<div class="row">
+					<div class="col-sm-12">
+						<h1 class = "h4 mb-3"><?php the_title(); ?></h1>
+					</div><!-- .col-sm-12 -->
 					<div class="col-md-7">
-						<h1 class="h4 mb-3"><?php the_field('page_title'); ?></h1>
-						<!-- .h3 mb-3 -->
-						<p class = "mb-3"><?php the_field('page_copy') ?></p>
-						<?php echo do_shortcode('[ninja_form id=1]'); ?>
-						<p><?php the_field('disclaimer'); ?></p>
+						<h2 class="h5 mb-3 gray">Services</h2>
+						<!-- .h5 mb-3 -->
+						<ul id = "services" class = "mb-3">
+							<?php
+							$services = get_field('services');
+							$items = explode(PHP_EOL, $services);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul><!-- #services -->
+						<hr>
+						<?php
+						if( have_rows('service_description') ):
+    					while ( have_rows('service_description') ) : the_row(); ?>
+    					<h3 class="h5 my-3 gray"><?php the_sub_field('title'); ?></h3>
+						<p><?php the_sub_field('copy'); ?></p>
+						<?php endwhile; endif; ?>
 					</div><!-- .col-md-7 -->
 					
 					<div id = "locations" class="col-md-5">
@@ -73,5 +87,5 @@
 			</div><!-- .container -->
 		</section>
 	</main><!-- #main -->
-</div><!-- #contact -->
+</div><!-- #serviceDetail -->
 <?php get_footer(); ?>
