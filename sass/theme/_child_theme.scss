@@ -14,6 +14,7 @@ Template:    Understrap
 
 html {
   @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -50,6 +51,10 @@ p {
 
 .gray {
 	color: $gray;
+}
+
+.border-bottom {
+	border-color: $gray;
 }
 
 .invisible-ink {
@@ -161,7 +166,7 @@ p {
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
 #pageHeader {
-	background: url('../img/page_header.png');
+	background: url('../img/page_header.jpg');
 	height: 350px;
 	display: flex;
 	justify-content: flex-start;
@@ -224,7 +229,48 @@ hr {
 	}
 }
 
-#singleAttorney {
+#professionals {
+	#quickLinks {
+		padding: 10px 0;
+		border-top: solid 2px $gray;
+		border-bottom: solid 2px $gray;
+		display: flex;
+		justify-content: space-between;
+		font-family: $merriweather;
+		a {
+			font-size: 1.2rem;
+			text-decoration: none;
+		}
+		.entriesAbsent {
+			color: #c3c0c0;
+		}
+	}
+	.letterAnchor {
+		display: flex;
+		margin: 25px 0;
+		color: $light-blue;
+		font-size: 1.2rem;
+		font-family: $merriweather;
+	}
+	.professional {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		.badge-image {
+			height: 100px;
+		    width: 100px;
+		    border-radius: 200px;
+		}
+		.links {
+			margin-left: auto;
+			i {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+
+#singleAttorney, #singleParalegal {
 	.links {
 		i {
 			font-size: 1.5rem;

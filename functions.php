@@ -295,19 +295,19 @@ add_action( 'init', 'paralegal_post_type', 0 );
 function paralegal_post_type() {
 // Set UI labels
   $labels = array(
-    'name'                => 'Parlegals',
-    'singular_name'       => 'Parlegal',
-    'menu_name'           => 'Parlegals',
-    'parent_item_colon'   => 'Parent Parlegal',
-    'all_items'           => 'All Parlegals',
-    'view_item'           => 'View Parlegals',
-    'add_new_item'        => 'Add New Parlegal',
+    'name'                => 'Paralegals',
+    'singular_name'       => 'Paralegal',
+    'menu_name'           => 'Paralegals',
+    'parent_item_colon'   => 'Parent Paralegal',
+    'all_items'           => 'All Paralegals',
+    'view_item'           => 'View Paralegals',
+    'add_new_item'        => 'Add New Paralegal',
     'add_new'             => 'Add Paralegal',
-    'edit_item'           => 'Edit Parlegal',
-    'update_item'         => 'Update Parlegal',
-    'search_items'        => 'Search Parlegals',
-    'not_found'           => 'No Parlegals Found',
-    'not_found_in_trash'  => 'No Parlegals Found in Trash',
+    'edit_item'           => 'Edit Paralegal',
+    'update_item'         => 'Update Paralegal',
+    'search_items'        => 'Search Paralegals',
+    'not_found'           => 'No Paralegals Found',
+    'not_found_in_trash'  => 'No Paralegals Found in Trash',
   );
   
 // Set other options
@@ -356,4 +356,13 @@ function d4tw_relationship_query( $args, $field, $post_id ) {
 
 // filter for a specific field based on it's name
 add_filter('acf/fields/relationship/query/name=practice_areas', 'd4tw_relationship_query', 10, 3);
-?>
+
+//filter the attorneys and paralegals by last name
+function posts_orderby_lastname ($orderby_statement) 
+{
+  $orderby_statement = "RIGHT(post_title, LOCATE(' ', REVERSE(post_title)) - 1) ASC";
+    return $orderby_statement;
+}
+
+//Add the avatar image size for professionals
+add_image_size( 'badge', 150, 150, true );

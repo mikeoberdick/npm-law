@@ -10785,13 +10785,15 @@ Template:    Understrap
 /*-------------------[FONTS]----------------------*/
 /*------------------------------------------------*/
 html {
-  font-size: 14px; }
-  @media screen and (min-width: 320px) {
-    html {
-      font-size: calc(14px + 4 * ((100vw - 320px) / 880)); } }
-  @media screen and (min-width: 1200px) {
-    html {
-      font-size: 18px; } }
+  scroll-behavior: smooth; }
+  html {
+    font-size: 14px; }
+    @media screen and (min-width: 320px) {
+      html {
+        font-size: calc(14px + 4 * ((100vw - 320px) / 880)); } }
+    @media screen and (min-width: 1200px) {
+      html {
+        font-size: 18px; } }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -10844,6 +10846,9 @@ p {
 
 .gray {
   color: #575757; }
+
+.border-bottom {
+  border-color: #575757; }
 
 .invisible-ink {
   display: none; }
@@ -10937,7 +10942,7 @@ p {
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
 #pageHeader {
-  background: url("../img/page_header.png");
+  background: url("../img/page_header.jpg");
   height: 350px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10995,17 +11000,61 @@ hr {
   border-bottom: solid 3px #2E5786;
   margin-bottom: 2rem; }
 
-#singleAttorney .links i {
+#professionals #quickLinks {
+  padding: 10px 0;
+  border-top: solid 2px #575757;
+  border-bottom: solid 2px #575757;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Merriweather", sans-serif; }
+  #professionals #quickLinks a {
+    font-size: 1.2rem;
+    text-decoration: none; }
+  #professionals #quickLinks .entriesAbsent {
+    color: #c3c0c0; }
+
+#professionals .letterAnchor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 25px 0;
+  color: #2E5786;
+  font-size: 1.2rem;
+  font-family: "Merriweather", sans-serif; }
+
+#professionals .professional {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  #professionals .professional .badge-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 200px; }
+  #professionals .professional .links {
+    margin-left: auto; }
+    #professionals .professional .links i {
+      font-size: 1.5rem; }
+
+#singleAttorney .links i, #singleParalegal .links i {
   font-size: 1.5rem; }
 
-#singleAttorney #attorneyDetails {
+#singleAttorney #attorneyDetails, #singleParalegal #attorneyDetails {
   padding: 25px;
   background-color: #2e578629; }
-  #singleAttorney #attorneyDetails #practiceAreas a {
+  #singleAttorney #attorneyDetails #practiceAreas a, #singleParalegal #attorneyDetails #practiceAreas a {
     color: #000;
     text-decoration: none; }
 
-#singleAttorney #contentSelector {
+#singleAttorney #contentSelector, #singleParalegal #contentSelector {
   border-top: solid 1px #575757;
   border-bottom: solid 1px #575757;
   cursor: pointer; }

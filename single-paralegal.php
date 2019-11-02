@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="singleAttorney">
+<div id="singleParalegal">
 	<main class="site-main" id="main">
 		
 		<section class="container">
@@ -171,5 +171,5 @@
 		</section><!-- .container -->
 
 	</main><!-- #main -->
-</div><!-- #singleAttorney -->
+</div><!-- #singleParalegal -->
 <?php get_footer(); ?>
