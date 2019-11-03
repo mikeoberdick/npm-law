@@ -52,6 +52,9 @@ p {
 .gray {
 	color: $gray;
 }
+.dark-blue {
+	color: $dark-blue;
+}
 
 .border-bottom {
 	border-color: $gray;
@@ -227,6 +230,15 @@ hr {
 	}
 }
 
+#recognition {
+	.award-recipients {
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+	}
+}
+
 #memoriam {
 	.memorial {
 		.bio {
@@ -246,6 +258,7 @@ hr {
 		display: flex;
 		justify-content: space-between;
 		font-family: $merriweather;
+		margin: 25px 0; 
 		a {
 			font-size: 1.2rem;
 			text-decoration: none;
@@ -254,9 +267,15 @@ hr {
 			color: #c3c0c0;
 		}
 	}
+	.professionals-left, .professionals-right {
+		flex: 0 0 48%;
+	}
+	.professionals-right {
+		margin-left: 4%;
+	}
 	.letterAnchor {
 		display: flex;
-		margin: 25px 0;
+		margin-bottom: 25px;
 		color: $light-blue;
 		font-size: 1.2rem;
 		font-family: $merriweather;

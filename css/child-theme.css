@@ -10847,6 +10847,9 @@ p {
 .gray {
   color: #575757; }
 
+.dark-blue {
+  color: #22233F; }
+
 .border-bottom {
   border-color: #575757; }
 
@@ -11002,6 +11005,10 @@ hr {
       font-size: 1.2rem;
       margin-bottom: 15px; }
 
+#recognition .award-recipients a {
+  text-decoration: none;
+  color: #000; }
+
 #memoriam .memorial .bio {
   padding-bottom: 2rem;
   border-bottom: solid 3px #2E5786;
@@ -11017,18 +11024,27 @@ hr {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-family: "Merriweather", sans-serif; }
+  font-family: "Merriweather", sans-serif;
+  margin: 25px 0; }
   #professionals #quickLinks a {
     font-size: 1.2rem;
     text-decoration: none; }
   #professionals #quickLinks .entriesAbsent {
     color: #c3c0c0; }
 
+#professionals .professionals-left, #professionals .professionals-right {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%; }
+
+#professionals .professionals-right {
+  margin-left: 4%; }
+
 #professionals .letterAnchor {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 25px 0;
+  margin-bottom: 25px;
   color: #2E5786;
   font-size: 1.2rem;
   font-family: "Merriweather", sans-serif; }

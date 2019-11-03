@@ -16,7 +16,7 @@
 			</div><!-- .row -->
 
 			<div class="row">
-				<div class="col-md-6">
+				<div class = "professionals-left col">
 					<?php if ( is_page('attorneys') ) {
 					//Setup the query args for wp query
 						$args = [
@@ -32,7 +32,7 @@
 						];
 					} ?>
 					<?php add_filter( 'posts_orderby' , 'posts_orderby_lastname' ); ?>
-					<?php $qry = new WP_Query($args); ?>
+<?php $qry = new WP_Query($args); $totalPosts = $qry->found_posts; $count = 0; ?>
 
 					<?php if ($qry->have_posts()) : while ($qry->have_posts()) : $qry->the_post(); ?>
 
@@ -47,7 +47,7 @@
 						</div>
 						
 						<div>
-							<a class = "name" href = "<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
+							<a id = "professional-<?php echo $count ?>" class = "name" href = "<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
 							<?php $location = get_field('location'); ?>
 							<p><?php echo get_field('title') . ', <span class = "location">' . $location['label'] . '</span>'; ?></p>
 						</div>
@@ -80,9 +80,13 @@
 							<?php } ?>
 						</div><!-- .links -->
 					</div><!-- .professional -->
+					<?php if ( is_page('attorneys') && $count == (int) ( $totalPosts / 2 ) ) {
+						echo '</div><div class = "professionals-right col">';
+					} ?>
+					<?php $count++; ?>
 				<?php endwhile; endif; ?>
 				<?php remove_filter( 'posts_orderby' , 'posts_orderby_lastname' ); ?>
-				</div><!-- .col-sm-12 -->	
+				</div><!-- *column end* -->	
 			</div>
 		</section><!-- .container -->
 
