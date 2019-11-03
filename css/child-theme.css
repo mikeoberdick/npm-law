@@ -10941,6 +10941,13 @@ p {
 /*------------------------------------------------*/
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
+.badge-image {
+  background-position: top center !important;
+  background-size: cover !important;
+  height: 100px;
+  width: 100px;
+  border-radius: 200px; }
+
 #pageHeader {
   background: url("../img/page_header.jpg");
   height: 350px;
@@ -11035,10 +11042,6 @@ hr {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-  #professionals .professional .badge-image {
-    height: 100px;
-    width: 100px;
-    border-radius: 200px; }
   #professionals .professional .links {
     margin-left: auto; }
     #professionals .professional .links i {
@@ -11077,6 +11080,16 @@ hr {
     font-size: 1.1rem;
     padding: 10px 0 10px 25px; }
 
+#serviceDetail #serviceSidebar .badge-image {
+  background-position: top center !important;
+  background-size: cover !important;
+  height: 75px;
+  width: 75px;
+  border-radius: 150px; }
+
+#serviceDetail #serviceSidebar hr {
+  border-color: #575757; }
+
 #careers #openPositions hr {
   margin: 0 0 1rem 0;
   border: 2px solid #2E5786; }
@@ -11084,6 +11097,20 @@ hr {
 #careers #callouts .callout hr {
   margin: 1rem 0;
   border: 3px solid #22233F; }
+
+.search-no-results #searchform {
+  position: relative; }
+  .search-no-results #searchform input {
+    border-color: #888;
+    border-radius: 0; }
+  .search-no-results #searchform button {
+    background: 0 0;
+    border: 0;
+    position: absolute;
+    top: 6px;
+    right: 12px; }
+  .search-no-results #searchform i {
+    color: #22233f; }
 
 /*------------------------------------------------*/
 /*--------------------[IMAGES]--------------------*/

@@ -9,7 +9,7 @@
 					<div class="col-sm-12">
 						<h1 class = "h4 mb-3"><?php the_title(); ?></h1>
 					</div><!-- .col-sm-12 -->
-					<div class="col-md-7">
+					<div class="col-md-8">
 						<h2 class="h5 mb-3 gray">Services</h2>
 						<!-- .h5 mb-3 -->
 						<ul id = "services" class = "mb-3">
@@ -23,65 +23,49 @@
 						<?php
 						if( have_rows('service_description') ):
     					while ( have_rows('service_description') ) : the_row(); ?>
-    					<h3 class="h5 my-3 gray"><?php the_sub_field('title'); ?></h3>
+    					<h3 class="h5 my-3 gray">About <?php the_sub_field('title'); ?></h3>
 						<p><?php the_sub_field('copy'); ?></p>
 						<?php endwhile; endif; ?>
-					</div><!-- .col-md-7 -->
+					</div><!-- .col-md-8 -->
 					
-					<div id = "locations" class="col-md-5">
-						<div class="location contact-box mb-3 w-100">
-							<h5>New Haven, CT</h5>
-						<?php
-						//vars
-						$addy1 = get_field('new_haven_address_line_1', 'option');
-						$addy2 = get_field('new_haven_address_line_2', 'option');
-						$phone = get_field('new_haven_phone_number', 'option');
-						$fax = get_field('new_haven_fax_number', 'option');
-						?>
-							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
-							<a href = ''><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
-						</div><!-- .location -->
-
-						<div class="location contact-box mb-3 w-100">
-							<h5>Hartford, CT</h5>
-						<?php
-						//vars
-						$addy1 = get_field('hartford_address_line_1', 'option');
-						$addy2 = get_field('hartford_address_line_2', 'option');
-						$phone = get_field('hartford_phone_number', 'option');
-						$fax = get_field('hartford_fax_number', 'option');
-						?>
-							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
-							<a href = ''><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
-						</div><!-- .location -->
-
-						<div class="location contact-box mb-3 w-100">
-							<h5>Fairfield, CT</h5>
-						<?php
-						//vars
-						$addy1 = get_field('fairfield_address_line_1', 'option');
-						$addy2 = get_field('fairfield_address_line_2', 'option');
-						$phone = get_field('fairfield_phone_number', 'option');
-						$fax = get_field('fairfield_fax_number', 'option');
-						?>
-							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
-							<a href = ''><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
-						</div><!-- .location -->
-
-						<div class="location contact-box mb-3 w-100">
-							<h5>White Plains, NY</h5>
-						<?php
-						//vars
-						$addy1 = get_field('white_plains_address_line_1', 'option');
-						$addy2 = get_field('white_plains_address_line_2', 'option');
-						$phone = get_field('white_plains_phone_number', 'option');
-						$fax = get_field('white_plains_fax_number', 'option');
-						?>
-							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
-							<a href = ''><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
-						</div><!-- .location -->
-							
-					</div><!-- .col-md-5 -->
+					<div id = "serviceSidebar" class="col-md-4">
+						<div class="contact-box mb-3 w-100">
+							<h5 class = "gray mb-3">Contact</h5>
+							<?php $post_objects = get_field('contact'); ?>
+							<?php if( $post_objects ): ?>
+    						<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+        					<?php setup_postdata($post); ?>
+        					<div class = "d-flex mb-3">
+        						<?php
+									$image = get_field('image');
+									$url = $image['url'];
+									$size = 'badge';
+									$thumb = $image['sizes'][ $size ];
+									?>
+								<div class = "badge-image mr-3" style = "background: url(<?php echo esc_url($thumb); ?>);">
+								</div>
+        						
+        						<div>
+        						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
+        							<span><?php the_field('title'); ?></span>
+        						</div>
+        					</div>
+    						<?php endforeach; ?>
+    						<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+							<?php endif; ?>
+							<hr>
+							<h5 class = "gray mb-3">Attorneys</h5>
+							<?php $post_objects = get_field('attorneys'); ?>
+							<?php if( $post_objects ): ?>
+    						<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+        					<?php setup_postdata($post); ?>
+        					<p class = "mb-2">
+        						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        					</p>
+    						<?php endforeach; ?>
+    						<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+							<?php endif; ?>
+					</div><!-- .col-md-4 -->
 				
 				</div><!-- .row -->
 			</div><!-- .container -->

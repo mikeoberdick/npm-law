@@ -48,7 +48,8 @@
 						
 						<div>
 							<a class = "name" href = "<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
-							<?php echo get_field('title') . ', <span class = "location">' . get_field('location') . '</span>'; ?>
+							<?php $location = get_field('location'); ?>
+							<p><?php echo get_field('title') . ', <span class = "location">' . $location['label'] . '</span>'; ?></p>
 						</div>
 						
 						<div class="links">
@@ -78,7 +79,7 @@
 								<a target = "_blank" href="<?php echo $instagram; ?>"><i class="mr-2 fa fa-instagram" aria-hidden="true"></i></a>
 							<?php } ?>
 						</div><!-- .links -->
-					</div><!-- .attorney/paralegal -->
+					</div><!-- .professional -->
 				<?php endwhile; endif; ?>
 				<?php remove_filter( 'posts_orderby' , 'posts_orderby_lastname' ); ?>
 				</div><!-- .col-sm-12 -->	

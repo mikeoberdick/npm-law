@@ -365,4 +365,4 @@ function posts_orderby_lastname ($orderby_statement)
 }
 
 //Add the avatar image size for professionals
-add_image_size( 'badge', 150, 150, true );
+add_image_size( 'badge', 100 ); // 100 pixels wide (and unlimited height)

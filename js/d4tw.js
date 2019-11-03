@@ -13,7 +13,8 @@ $('ul.navbar-nav li.dropdown').hover(function() {
 });
 
 //Name Sorter to run on Attorney and Paralegal page
-var terms = $(".professional .name").sort();
+var terms = $(".name");
+console.log(terms);
 var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 				
 for ( var i = 0; i < letters.length; i++ ) {
@@ -47,9 +48,9 @@ for ( var i = 0; i < letters.length; i++ ) {
     $("<a class=\"letterAnchor\" name=\"" + nextChar + "\">").insertBefore(terms[foundOne]);
     $("a[name=" + nextChar + "]").html(nextChar);
     $('.letterAnchor').each(function() {
-    $(this).parent().parent().before(this);
-})
-	}
+        $(this).closest('.professional').before(this);
+    })
+}
 
     // Either way, add the letterLink to the list of letterLinks
     $("#quickLinks").append(newLetterLink);

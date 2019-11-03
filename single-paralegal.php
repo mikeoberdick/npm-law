@@ -42,12 +42,12 @@
 						</div><!-- .col-sm-7 -->
 					</div><!-- .row -->
 					<div class="address mb-3">
-						<?php $office = get_field('location');
+						<?php $office = get_field('location')['value']; 
 						$addy1 = get_field($office . '_address_line_1', 'option');
 						$addy2 = get_field($office . '_address_line_2', 'option');
 						$phone = get_field($office . '_phone_number', 'option');
 						$fax = get_field($office . '_fax_number', 'option'); ?>
-						<p><?php echo $addy1 . ',' . $addy2  ?></p>
+						<p><?php echo $addy1 . ', ' . $addy2  ?></p>
 						<p><?php echo $phone . ' | ' . $fax  ?></p>
 					</div><!-- .address -->
 					<div id = "attorneyDetails">
@@ -98,7 +98,7 @@
 
 			?>
 
-			<nav class="row">
+			<nav class="row d-print-none">
 			  <div id="contentSelector" class="col-md-12 py-3 mb-3 nav nav-tabs d-flex justify-content-around align-items-center" role="tablist">
 			  	<?php if( $bio ) { ?>
 			    <div class="text-center nav-item active" id="nav-bio-tab" data-toggle="tab" href="#nav-bio" role="tab" aria-controls="nav-bio" aria-selected="true">Biography</div>
@@ -130,7 +130,7 @@
 			  </div>
 			</nav><!-- .row -->
 
-			<div class="row">
+			<div class="row d-print-none">
 				<div class="col-sm-12 tab-content" id="nav-tabContent">
 					<?php if( $bio ) { ?>
 					<div class="tab-pane fade show active" id="nav-bio" role="tabpanel" aria-labelledby="nav-bio-tab"><p><?php the_field('biography'); ?></p></div>
@@ -162,9 +162,70 @@
 				</div><!-- .col-sm-12 -->
 			</div><!-- .row -->
 
-			<div class="row">
+			<div class="row d-none d-print-block">
 				<div class="col-sm-12">
-					<div class = "mt-5 invisible-ink">INVISIBLE EXCEPT FOR PRINT</div>
+					<?php if( $bio ) { ?>
+					<div class = "mb-5">
+						<h5 class = "border-bottom pb-3 mb-3">Biography</h5>
+						<p><?php echo $bio; ?></p>
+					</div>
+					<?php } ?>
+
+					<?php if( $memberships ) { ?>
+					<div class = "mb-5">
+						<h5 class = "border-bottom pb-3 mb-3">Profesional Memberships</h5>
+						<p><?php echo $memberships; ?></p>
+					</div>
+					<?php } ?>
+
+				  	<?php if( $honors ) { ?>
+					<div class = "mb-5">
+						<h5 class = "border-bottom pb-3 mb-3">Honors & Awards</h5>
+						<p><?php echo $honors; ?></p>
+					</div>
+					<?php } ?>
+
+					<?php if( $community ) { ?>
+					<div class = "mb-5">
+						<h5 class = "border-bottom pb-3 mb-3">Community</h5>
+						<p><?php echo $community; ?></p>
+					</div>
+					<?php } ?>
+
+					<?php if( $publications ) { ?>
+					<div class = "mb-5">
+						<h5 class = "border-bottom pb-3 mb-3">Publications</h5>
+						<p><?php echo $publications; ?></p>
+					</div>
+					<?php } ?>
+
+					<?php if( $speaking ) { ?>
+					<div class = "mb-5">
+						<h5 class = "border-bottom pb-3 mb-3">Speaking Engagements</h5>
+						<p><?php echo $speaking; ?></p>
+					</div>
+					<?php } ?>
+
+					<?php if( $classes ) { ?>
+					<div class = "mb-5">
+						<h5 class = "border-bottom pb-3 mb-3">Classes & Seminars</h5>
+						<p><?php echo $classes; ?></p>
+					</div>
+					<?php } ?>
+
+					<?php if( $cases ) { ?>
+					<div class = "mb-5">
+						<h5 class = "border-bottom pb-3 mb-3">Representative Cases</h5>
+						<p><?php echo $cases; ?></p>
+					</div>
+					<?php } ?>
+
+					<?php if( $bar ) { ?>
+					<div class = "mb-5">
+						<h5 class = "border-bottom pb-3 mb-3">Bar Admissions</h5>
+						<p><?php echo $bar; ?></p>
+					</div>
+					<?php } ?>
 				</div><!-- .col-sm-12 -->
 			</div><!-- .row -->
 
