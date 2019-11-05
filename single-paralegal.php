@@ -133,31 +133,97 @@
 			<div class="row d-print-none">
 				<div class="col-sm-12 tab-content" id="nav-tabContent">
 					<?php if( $bio ) { ?>
-					<div class="tab-pane fade show active" id="nav-bio" role="tabpanel" aria-labelledby="nav-bio-tab"><p><?php the_field('biography'); ?></p></div>
+					<div class="tab-pane fade show active" id="nav-bio" role="tabpanel" aria-labelledby="nav-bio-tab">
+						<p><?php the_field('biography'); ?></p>
+					</div>
 					<?php } ?>
+
 					<?php if( $memberships ) { ?>
-					<div class="tab-pane fade" id="nav-memberships" role="tabpanel" aria-labelledby="nav-memberships-tab"><p><?php echo $memberships; ?></p></div>
+					<div class="tab-pane fade" id="nav-memberships" role="tabpanel" aria-labelledby="nav-memberships-tab">
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $memberships);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
+					</div>
 					<?php } ?>
+
 				  	<?php if( $honors ) { ?>
-					<div class="tab-pane fade" id="nav-honors" role="tabpanel" aria-labelledby="nav-honors-tab"><p><?php echo $honors; ?></p></div>
+					<div class="tab-pane fade" id="nav-honors" role="tabpanel" aria-labelledby="nav-honors-tab">
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $honors);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
+					</div>
 					<?php } ?>
+
 					<?php if( $community ) { ?>
-					<div class="tab-pane fade" id="nav-community" role="tabpanel" aria-labelledby="nav-community-tab"><p><?php echo $community; ?></p></div>
+					<div class="tab-pane fade" id="nav-community" role="tabpanel" aria-labelledby="nav-community-tab">
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $community);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
+					</div>
 					<?php } ?>
+
 					<?php if( $publications ) { ?>
-					<div class="tab-pane fade" id="nav-publications" role="tabpanel" aria-labelledby="nav-publications-tab"><p><?php echo $publications; ?></p></div>
+					<div class="tab-pane fade" id="nav-publications" role="tabpanel" aria-labelledby="nav-publications-tab">
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $publications);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
+					</div>
 					<?php } ?>
+
 					<?php if( $speaking ) { ?>
-					<div class="tab-pane fade" id="nav-speaking" role="tabpanel" aria-labelledby="nav-speaking-tab"><p><?php echo $speaking; ?></p></div>
+					<div class="tab-pane fade" id="nav-speaking" role="tabpanel" aria-labelledby="nav-speaking-tab">
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $speaking);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
+					</div>
 					<?php } ?>
+
 					<?php if( $classes ) { ?>
-					<div class="tab-pane fade" id="nav-classes" role="tabpanel" aria-labelledby="nav-classes-tab"><p><?php echo $classes; ?></p></div>
+					<div class="tab-pane fade" id="nav-classes" role="tabpanel" aria-labelledby="nav-classes-tab">
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $classes);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
+					</div>
 					<?php } ?>
+
 					<?php if( $cases ) { ?>
-					<div class="tab-pane fade" id="nav-cases" role="tabpanel" aria-labelledby="nav-cases-tab"><p><?php echo $cases; ?></p></div>
+					<div class="tab-pane fade" id="nav-cases" role="tabpanel" aria-labelledby="nav-cases-tab">
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $cases);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
+					</div>
 					<?php } ?>
+
 					<?php if( $bar ) { ?>
-					<div class="tab-pane fade" id="nav-bar" role="tabpanel" aria-labelledby="nav-bar-tab"><p><?php echo $bar; ?></p></div>
+					<div class="tab-pane fade" id="nav-bar" role="tabpanel" aria-labelledby="nav-bar-tab">
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $bar);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
+					</div>
 					<?php } ?>
 				</div><!-- .col-sm-12 -->
 			</div><!-- .row -->
@@ -174,56 +240,96 @@
 					<?php if( $memberships ) { ?>
 					<div class = "mb-5">
 						<h5 class = "border-bottom pb-3 mb-3">Profesional Memberships</h5>
-						<p><?php echo $memberships; ?></p>
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $memberships);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
 					</div>
 					<?php } ?>
 
 				  	<?php if( $honors ) { ?>
 					<div class = "mb-5">
 						<h5 class = "border-bottom pb-3 mb-3">Honors & Awards</h5>
-						<p><?php echo $honors; ?></p>
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $honors);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
 					</div>
 					<?php } ?>
 
 					<?php if( $community ) { ?>
 					<div class = "mb-5">
 						<h5 class = "border-bottom pb-3 mb-3">Community</h5>
-						<p><?php echo $community; ?></p>
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $community);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
 					</div>
 					<?php } ?>
 
 					<?php if( $publications ) { ?>
 					<div class = "mb-5">
 						<h5 class = "border-bottom pb-3 mb-3">Publications</h5>
-						<p><?php echo $publications; ?></p>
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $publications);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
 					</div>
 					<?php } ?>
 
 					<?php if( $speaking ) { ?>
 					<div class = "mb-5">
 						<h5 class = "border-bottom pb-3 mb-3">Speaking Engagements</h5>
-						<p><?php echo $speaking; ?></p>
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $speaking);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
 					</div>
 					<?php } ?>
 
 					<?php if( $classes ) { ?>
 					<div class = "mb-5">
 						<h5 class = "border-bottom pb-3 mb-3">Classes & Seminars</h5>
-						<p><?php echo $classes; ?></p>
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $classes);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
 					</div>
 					<?php } ?>
 
 					<?php if( $cases ) { ?>
 					<div class = "mb-5">
 						<h5 class = "border-bottom pb-3 mb-3">Representative Cases</h5>
-						<p><?php echo $cases; ?></p>
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $cases);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
 					</div>
 					<?php } ?>
 
 					<?php if( $bar ) { ?>
 					<div class = "mb-5">
 						<h5 class = "border-bottom pb-3 mb-3">Bar Admissions</h5>
-						<p><?php echo $bar; ?></p>
+						<ul class = "mb-3">
+							<?php
+							$items = explode(PHP_EOL, $bar);
+			                foreach($items as $item) {
+			                echo '<li>' . $item . '</li>'; } ?>
+						</ul>
 					</div>
 					<?php } ?>
 				</div><!-- .col-sm-12 -->

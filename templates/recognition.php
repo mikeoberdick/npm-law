@@ -10,7 +10,13 @@
 					<h1 class="h4 mb-3"><?php the_title(); ?></h1><!-- .h3 -->
 					<p class = "mb-3"><?php the_field('blurb'); ?></p>
 					<h2 class = "h5 mb-3 gray">Recognition for Neubert, Pepe & Monteith, P.C.</h2>
-					<p class = "mb-3"><?php the_field('firm_recognition'); ?></p>
+					<ul class = "mb-3">
+						<?php
+						$list = get_field('firm_recognition');
+						$items = explode(PHP_EOL, $list);
+		                foreach($items as $item) {
+		                echo '<li>' . $item . '</li>'; } ?>
+					</ul>
 					<h3 class = "h5 mb-3 gray">Attorney Recognition</h3>
 					<?php
 					while ( have_rows('attorney_recognition') ) : the_row(); ?>

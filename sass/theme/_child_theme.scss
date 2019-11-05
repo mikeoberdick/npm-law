@@ -45,10 +45,6 @@ a {
 	text-decoration: underline;
 }
 
-p {
-	margin-bottom: 0;
-}
-
 .gray {
 	color: $gray;
 }
@@ -57,17 +53,7 @@ p {
 }
 
 .border-bottom {
-	border-color: $gray;
-}
-
-.invisible-ink {
-	display: none;
-}
-
-@media print {
-  .invisible-ink {
-		display: block;
-	}
+	border-color: $light-gray;
 }
 
 /*------------------------------------------------*/
@@ -168,7 +154,10 @@ p {
 /*------------------------------------------------*/
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
-
+.wp-caption-text {
+	color: $gray;
+	text-align: center;
+}
 .badge-image {
 	background-position: top center !important;
 	background-size: cover !important;
@@ -391,7 +380,81 @@ hr {
 		    right: 12px;
 		}
 		i {
-			color: #22233f;
+			color: $dark-blue;
+		}
+	}
+}
+
+#news, #articles {
+	#ajaxFilter {
+		ul {
+			li {
+				font-family: $merriweather;
+				color: $light-blue;
+				cursor: pointer;
+				padding-bottom: 5px;
+				border-bottom: solid 3px transparent;
+				&:hover {
+					color: $gray;
+					border-bottom: solid 3px $dark-blue;
+				}
+			}
+			.active-year {
+				color: $gray;
+				border-bottom: solid 3px $dark-blue;
+			}
+		}
+	}
+	.post {
+		.date-wrapper {
+			flex: 0 0 10%;
+			.date-box {
+				font-family: $merriweather;
+				display: flex;
+				background: $light-gray;
+				justify-content: center;
+				align-items: center;
+				width: 100px;
+				height: 100px;
+			}
+		}
+		.title-wrapper {
+			a {
+				text-decoration: none;
+			}
+			h2 {
+				font-family: $muli;
+			}
+		}
+	}
+}
+
+.single-news, .single-article {
+	p {
+		text-align: justify;
+	}
+	hr {
+		border-color: $gray;
+	}
+	.author {
+		p {
+			text-align: left;
+		}
+		i {
+			font-size: 1.5rem;
+		}
+		.short-bio {
+			flex-basis: 75%;
+		}
+	}
+	.two-authors, .three-authors {
+		.author-details {
+			width: 150px;
+			margin-right: 15px;
+			img {
+				height: 200px;
+    			width: 150px;
+			}
 		}
 	}
 }
@@ -400,11 +463,7 @@ hr {
 /*--------------------[IMAGES]--------------------*/
 /*------------------------------------------------*/
 
-.image-caption {
-	margin-top: 10px;
-	text-align: center;
-	color: #575757;
-}
+
 
 /*------------------------------------------------*/
 /*----------------------[ACF]---------------------*/
