@@ -1,18 +1,21 @@
 jQuery(function($){
 
-//Automatically generate filler content height to ensure footer is on bottom of the page
+/////////////////  PUSH DOWN FOOTER  \\\\\\\\\\\\\\\\\
+
 $(document).ready(function() {
 	$('#js-heightControl').css('height', $(window).height() - $('html').height() +'px');
 });
 
-//Dropdown on hover
+/////////////////  DROPDOWN ON HOVER  \\\\\\\\\\\\\\\\\
+
 $('ul.navbar-nav li.dropdown').hover(function() {
 	$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
 }, function() {
 	$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
 });
 
-//Name Sorter to run on Attorney and Paralegal page
+/////////////////  PROFESSIONALS NAME SORTER  \\\\\\\\\\\\\\\\\
+
 var terms = $(".name");
 console.log(terms);
 var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -56,16 +59,16 @@ for ( var i = 0; i < letters.length; i++ ) {
     $("#quickLinks").append(newLetterLink);
 }
 
-/////////////////  BLOG POSTS AJAX FILTER  \\\\\\\\\\\\\\\\\
+/////////////////  AJAX NEWS POSTS FILTER  \\\\\\\\\\\\\\\\\
 
-function get_posts($params) {
+function get_news($params) {
 
   $content   = $('#postContainer');
 
   $.ajax({
     url: psc.ajax_url,
     data: {
-      action: 'do_filter_posts',
+      action: 'filter_news',
       nonce: psc.nonce,
       params: $params
     },
@@ -77,9 +80,8 @@ function get_posts($params) {
   });
 }
 
-//Bind category links to get_posts function
-$('body').on('click', '.year-choice', function(event) {
-    alert('clicked');
+//Bind years to the get_articles function
+$('body').on('click', '#news .year-choice', function(event) {
   //kill the default click behavior
   if(event.preventDefault) { event.preventDefault(); }
     //Set the click element to a variable
@@ -98,16 +100,19 @@ $('body').on('click', '.year-choice', function(event) {
       };
 
       // Run query
-        get_posts($params);
+        get_news($params);
     });
 
-function get_more_posts($params) {
+/////////////////  AJAX ARTICLES POSTS FILTER  \\\\\\\\\\\\\\\\\
+
+function get_articles($params) {
+
   $content   = $('#postContainer');
-  var i = 1;
+
   $.ajax({
     url: psc.ajax_url,
     data: {
-      action: 'do_filter_posts',
+      action: 'filter_articles',
       nonce: psc.nonce,
       params: $params
     },
@@ -115,34 +120,32 @@ function get_more_posts($params) {
     dataType: 'json',
     success: function(data) {
         $content.html(data.content);
-        $('html, body').animate({scrollTop: $("#main").offset().top}, 'slow');
       }
   });
 }
 
-//Bind category links to get_posts function
-$('body').on('click', '.psc-pagination a', function(e) {
+//Bind years to the get_articles function
+$('body').on('click', '#articles .year-choice', function(event) {
   //kill the default click behavior
-  if(e.preventDefault) { e.preventDefault(); }
+  if(event.preventDefault) { event.preventDefault(); }
     //Set the click element to a variable
     $this = $(this);
 
-      //Default pagination
-        $page = parseInt($this.attr('href').replace(/\D/g,''));
-        $this = $('.nav-filter .active a');
+        //Find the previously active year and remove the .active class
+        $this.closest('ul').find('.active-year').removeClass('active-year');
+        //Add the .active class to the selected year
+        $this.addClass('active-year');
+        //Get the year for the query
+        $year = $this.data('year');
 
       //Set the parameters for the new query
       $params = {
-        'page' : $page,
-        'tax'  : $this.data('filter'),
-        'term' : $this.data('term'),
-        'qty'  : $this.closest('#container-async').data('paged'),
+        'year' : $year,
       };
 
       // Run query
-        get_more_posts($params);
+        get_articles($params);
     });
-
 
 //end of file
 });

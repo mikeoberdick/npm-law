@@ -7,7 +7,7 @@
 			<div class="row mb-3">
 				<div class="col-sm-12">
 					<h1 class = "h4"><?php the_title(); ?></h1>
-					<span class = "gray"><?php the_date(); ?></span>
+					<span class = "gray mb-3 d-block"><?php the_date(); ?></span>
 					<?php the_content(); ?>
 					<hr>
 					<?php

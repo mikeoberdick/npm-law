@@ -366,3 +366,116 @@ function posts_orderby_lastname ($orderby_statement)
 
 //Add the avatar image size for professionals
 add_image_size( 'badge', 100 ); // 100 pixels wide (and unlimited height)
+
+//Update the theme read more link
+if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
+    function understrap_all_excerpts_get_more_link( $post_excerpt ) {
+        if ( ! is_admin() ) {
+            $post_excerpt = $post_excerpt . '...';
+        }
+        return $post_excerpt;
+    }
+}
+add_filter( 'wp_trim_excerpt', 'understrap_all_excerpts_get_more_link' );
+
+//Ajax Assets for posts filter
+function ajax_assets() {
+    wp_enqueue_script('ajax/js', 'js/d4tw.js', ['jquery'], null, true);
+    wp_localize_script( 'ajax/js', 'psc', array(
+        'nonce'    => wp_create_nonce( 'psc' ),
+        'ajax_url' => admin_url( 'admin-ajax.php' )
+    ));
+}
+add_action('wp_enqueue_scripts', 'ajax_assets', 100);
+
+//Filter for news posts
+function psc_filter_news_posts() {
+    if( !isset( $_POST['nonce'] ) || !wp_verify_nonce( $_POST['nonce'], 'psc' ) )
+        die('Permission denied');
+    $year = intval($_POST['params']['year']);
+    
+    //Setup query
+    $args = [
+        'post_type'      => 'news',
+        'post_status'    => 'publish',
+        'date_query' => array(
+            array(
+                'year'  => $year
+            ),
+        ),
+    ];
+    $qry = new WP_Query($args);
+    ob_start();
+        if ($qry->have_posts()) :
+            while ($qry->have_posts()) : $qry->the_post(); ?>
+
+                <div class="post row border-bottom pb-3 mb-3">
+                            <div class="col date-wrapper">
+                                <div class = "date-box">
+                                    <span class="date dark-blue">
+                                        <?php
+                                        $month = get_the_date('M');
+                                        $day = get_the_date('j');
+                                        echo $month . '. ' . $day; ?>
+                                    </span>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col d-flex flex-column title-wrapper">
+                                <h2 class="h5"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                <p class = "mb-0"><?php the_excerpt(); ?></p>
+                            </div><!-- .col -->
+                        </div><!-- .post -->
+
+            <?php endwhile; endif;
+
+            $response['content'] = ob_get_clean();
+            die(json_encode($response));
+}
+add_action('wp_ajax_filter_news', 'psc_filter_news_posts');
+add_action('wp_ajax_nopriv_filter_news', 'psc_filter_news_posts');
+
+//Filter for article posts
+function psc_filter_article_posts() {
+    if( !isset( $_POST['nonce'] ) || !wp_verify_nonce( $_POST['nonce'], 'psc' ) )
+        die('Permission denied');
+    $year = intval($_POST['params']['year']);
+    
+    //Setup query
+    $args = [
+        'post_type'      => 'article',
+        'post_status'    => 'publish',
+        'date_query' => array(
+            array(
+                'year'  => $year
+            ),
+        ),
+    ];
+    $qry = new WP_Query($args);
+    ob_start();
+        if ($qry->have_posts()) :
+            while ($qry->have_posts()) : $qry->the_post(); ?>
+
+                <div class="post row border-bottom pb-3 mb-3">
+                            <div class="col date-wrapper">
+                                <div class = "date-box">
+                                    <span class="date dark-blue">
+                                        <?php
+                                        $month = get_the_date('M');
+                                        $day = get_the_date('j');
+                                        echo $month . '. ' . $day; ?>
+                                    </span>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col d-flex flex-column title-wrapper">
+                                <h2 class="h5"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                <p class = "mb-0"><?php the_excerpt(); ?></p>
+                            </div><!-- .col -->
+                        </div><!-- .post -->
+
+            <?php endwhile; endif;
+
+            $response['content'] = ob_get_clean();
+            die(json_encode($response));
+}
+add_action('wp_ajax_filter_articles', 'psc_filter_article_posts');
+add_action('wp_ajax_nopriv_filter_articles', 'psc_filter_article_posts');

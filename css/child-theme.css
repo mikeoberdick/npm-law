@@ -11161,6 +11161,9 @@ hr {
 #news .post .title-wrapper h2, #articles .post .title-wrapper h2 {
   font-family: "Muli", sans-serif; }
 
+#news .post .title-wrapper p, #articles .post .title-wrapper p {
+  margin-bottom: 0; }
+
 .single-news p, .single-article p {
   text-align: justify; }
 

@@ -28,7 +28,7 @@
         			}
     				endwhile; wp_reset_postdata(); endif; ?>
 					
-					<div id = "ajaxFilter" class = "">
+					<div id = "ajaxFilter" class = "mb-5">
 						<ul class = "list-unstyled d-flex justify-content-between">
 							<?php 
 							$i = 0;
@@ -41,8 +41,8 @@
 			</div><!-- .row -->
 		</section>
 
-		<section id = "postContainer" class = "container">
-			<div class="row">
+		<section class = "container">
+			<div id = "postContainer" class="row">
 				<div class = "col-sm-12">
 					<?php //Setup the query args for wp query
 					$getdate = getdate();
@@ -74,7 +74,7 @@
 							</div><!-- .col -->
 							<div class="col d-flex flex-column title-wrapper">
 								<h2 class="h5"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<p>excerpt</p>
+								<p class = "mb-0"><?php the_excerpt(); ?></p>
 							</div><!-- .col -->
 						</div><!-- .post -->
 
