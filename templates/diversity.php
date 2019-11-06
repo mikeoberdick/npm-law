@@ -13,7 +13,7 @@
 							<h2 class="h5 mb-3 gray">
 								<?php the_sub_field('title'); ?>
 							</h2><!-- .h5 -->
-							<p><?php the_sub_field('copy'); ?></p>
+							<?php the_sub_field('copy'); ?>
 						</div><!-- .mt-3 -->
 					<?php endwhile; endif; ?>
 				</div><!-- .col-sm-12 -->

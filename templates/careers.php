@@ -51,11 +51,11 @@
 					$details = get_sub_field('position_details');
 					?>
 
-				<div class="position mb-5">
+				<div class="position mb-3">
 					<h5 class = "gray mb-3"><?php echo $title; ?></h5>
 					<div><?php echo $details; ?></div>
 				</div>
-
+				<hr>
 				<?php endwhile; ?>
 
 				</div><!-- .col-sm-12 -->

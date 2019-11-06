@@ -14,7 +14,8 @@
 	<div class="container">
 		<div id = "locations" class="row">
 			<?php if ( is_front_page() ) { ?>
-				<div class="col-6 col-md-3">
+				
+				<div class="mb-3 mb-md-0 col-6 col-md-3">
 					<h6 class = "location text-center">New Haven</h6>
 					<?php
 					//vars
@@ -24,6 +25,18 @@
 					?>
 					<p class = "text-center small"><?php echo $addy1 . '<br>' . $addy2 . '<br>Phone: ' . $phone ?></p>
 				</div><!--col-sm-3 -->
+				
+				<div class="mb-3 mb-md-0 col-6 col-md-3">
+					<h6 class = "location text-center">Hartford</h6>
+					<?php
+					//vars
+					$addy1 = get_field('hartford_address_line_1', 'option');
+					$addy2 = get_field('hartford_address_line_2', 'option');
+					$phone = get_field('hartford_phone_number', 'option');
+					?>
+					<p class = "text-center small"><?php echo $addy1 . '<br>' . $addy2 . '<br>Phone: ' . $phone ?></p>
+				</div><!--col-sm-3 -->
+
 				<div class="col-6 col-md-3">
 					<h6 class = "location text-center">Fairfield</h6>
 					<?php
@@ -41,16 +54,6 @@
 					$addy1 = get_field('white_plains_address_line_1', 'option');
 					$addy2 = get_field('white_plains_address_line_2', 'option');
 					$phone = get_field('white_plains_phone_number', 'option');
-					?>
-					<p class = "text-center small"><?php echo $addy1 . '<br>' . $addy2 . '<br>Phone: ' . $phone ?></p>
-				</div><!--col-sm-3 -->
-				<div class="col-6 col-md-3">
-					<h6 class = "location text-center">Hartford</h6>
-					<?php
-					//vars
-					$addy1 = get_field('hartford_address_line_1', 'option');
-					$addy2 = get_field('hartford_address_line_2', 'option');
-					$phone = get_field('hartford_phone_number', 'option');
 					?>
 					<p class = "text-center small"><?php echo $addy1 . '<br>' . $addy2 . '<br>Phone: ' . $phone ?></p>
 				</div><!--col-sm-3 -->

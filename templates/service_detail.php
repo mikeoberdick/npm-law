@@ -21,11 +21,12 @@
 						</ul><!-- #services -->
 						<hr>
 						<?php
-						if( have_rows('service_description') ):
+						if( have_rows('service_description') ) : $i = 0;
     					while ( have_rows('service_description') ) : the_row(); ?>
-    					<h3 class="h5 my-3 gray">About <?php the_sub_field('title'); ?></h3>
+    					<?php if ($i == 0) {echo '<h3 class="h5 my-3 gray">';} else {echo '<h3 class="h6 my-3 gray">';} ?>
+    					<?php if ($i == 0) {echo 'About ';} ?><?php the_sub_field('title'); ?></h3>
 						<p><?php the_sub_field('copy'); ?></p>
-						<?php endwhile; endif; ?>
+						<?php $i++; endwhile; endif; ?>
 					</div><!-- .col-md-8 -->
 					
 					<div id = "serviceSidebar" class="col-md-4">

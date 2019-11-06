@@ -33,6 +33,7 @@
 							<?php 
 							$i = 0;
 							foreach ( $years as $year ) : ?>
+								<?php if($i==6) break; ?>
 								<li class = "year-choice <?php if ($i == 0) {echo 'active-year';} ?>" data-year = "<?php echo $year; ?>"><?php echo $year; ?></li>
 	        				<?php $i++; endforeach; ?>
 						</ul>

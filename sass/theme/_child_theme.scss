@@ -38,6 +38,7 @@ h3 {
 body {
 	color: #000000;
 	font-family: $muli;
+	font-size: .9rem;
 }
 
 a {
@@ -77,8 +78,13 @@ a {
 /*------------------------------------------------*/
 
 #headerSocial {
+	width: 215px;
+	justify-content: space-between;
 	.social-link {
 		margin-right: 10px;
+		&:last-of-type {
+			margin-right: 0;
+		}
 	}
 	.fa {
 		height: 30px;
@@ -125,7 +131,7 @@ a {
 }
 
 #headerSearch {
-	width: 200px;
+	width: 215px;
 	position: relative;
 	input {
 		border-color: #888888;
@@ -154,16 +160,16 @@ a {
 /*------------------------------------------------*/
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
-.wp-caption-text {
+.wp-caption-text, .image-caption {
 	color: $gray;
 	text-align: center;
 }
 .badge-image {
 	background-position: top center !important;
 	background-size: cover !important;
-	height: 100px;
-    width: 100px;
-    border-radius: 200px;
+	height: 75px;
+	width: 75px;
+	border-radius: 150px;
 }
 
 #pageHeader {
@@ -233,7 +239,11 @@ hr {
 		.bio {
 			padding-bottom: 2rem;
 			border-bottom: solid 3px $light-blue;
-			margin-bottom: 2rem;	
+			margin-bottom: 2rem;
+			img {
+				-webkit-filter: grayscale(100%);
+  				filter: grayscale(100%);
+			}
 		}
 		
 	}
@@ -300,9 +310,30 @@ hr {
 	}
 
 	#contentSelector {
+		padding-left: 15px;
+		padding-right: 15px;
 		border-top: solid 1px $gray;
 		border-bottom: solid 1px $gray;
 		cursor: pointer;
+		font-family: $merriweather;
+		color: $gray;
+		font-weight: bold;
+		.active {
+			color: $light-blue;
+			border-color: $light-blue !important;
+		}
+		.nav-item {
+			margin-right: 50px;
+			padding-bottom: 5px;
+			border-bottom: solid 2px transparent;
+			&:hover {
+				color: $light-blue;
+				border-color: $light-blue !important;
+			}
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
 	}
 }
 
@@ -335,13 +366,6 @@ hr {
 
 #serviceDetail {
 	#serviceSidebar {
-		.badge-image {
-			background-position: top center !important;
-    		background-size: cover !important;
-			height: 75px;
-		    width: 75px;
-		    border-radius: 150px;
-		}
 		hr {
 			border-color: $gray;
 		}

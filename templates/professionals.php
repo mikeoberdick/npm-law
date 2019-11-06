@@ -47,7 +47,7 @@
 						</div>
 						
 						<div>
-							<a id = "professional-<?php echo $count ?>" class = "name" href = "<?php the_permalink(); ?>"><?php the_title(); ?></a><br>
+							<a id = "professional-<?php echo $count ?>" class = "name" href = "<?php the_permalink(); ?>"><?php the_field('name'); ?></a><br>
 							<?php $location = get_field('location'); ?>
 							<p><?php echo get_field('title') . ', <span class = "location">' . $location['label'] . '</span>'; ?></p>
 						</div>

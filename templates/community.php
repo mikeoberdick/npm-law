@@ -22,7 +22,8 @@
 				<?php if( $images ): ?>
         			<?php foreach( $images as $image ): ?>
             			<div class="col-md-3">
-            				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+            				<a target = "_blank" href="<?php echo $image['description']; ?>">
+            				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
             			</div><!-- .col-md-3 -->
         			<?php endforeach; ?>
 					<?php endif; ?>

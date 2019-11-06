@@ -300,7 +300,7 @@ function paralegal_post_type() {
     'menu_name'           => 'Paralegals',
     'parent_item_colon'   => 'Parent Paralegal',
     'all_items'           => 'All Paralegals',
-    'view_item'           => 'View Paralegals',
+    'view_item'           => 'View Paralegal',
     'add_new_item'        => 'Add New Paralegal',
     'add_new'             => 'Add Paralegal',
     'edit_item'           => 'Edit Paralegal',

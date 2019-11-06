@@ -10835,7 +10835,8 @@ h3 {
 
 body {
   color: #000000;
-  font-family: "Muli", sans-serif; }
+  font-family: "Muli", sans-serif;
+  font-size: .9rem; }
 
 a {
   color: #2E5786;
@@ -10866,31 +10867,34 @@ a {
 /*------------------------------------------------*/
 /*--------------------[HEADER]--------------------*/
 /*------------------------------------------------*/
-#headerSocial .social-link {
-  margin-right: 10px; }
-
-#headerSocial .fa {
-  height: 30px;
-  width: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: white; }
-
-#headerSocial .fa-linkedin {
-  background-color: #006AA8; }
-
-#headerSocial .fa-facebook {
-  background-color: #1E4888; }
-
-#headerSocial .fa-twitter {
-  background-color: #009ADA; }
+#headerSocial {
+  width: 215px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  #headerSocial .social-link {
+    margin-right: 10px; }
+    #headerSocial .social-link:last-of-type {
+      margin-right: 0; }
+  #headerSocial .fa {
+    height: 30px;
+    width: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white; }
+  #headerSocial .fa-linkedin {
+    background-color: #006AA8; }
+  #headerSocial .fa-facebook {
+    background-color: #1E4888; }
+  #headerSocial .fa-twitter {
+    background-color: #009ADA; }
 
 .navbar {
   background-color: #22233F; }
@@ -10911,7 +10915,7 @@ a {
     border-radius: 0; }
 
 #headerSearch {
-  width: 200px;
+  width: 215px;
   position: relative; }
   #headerSearch input {
     border-color: #888888;
@@ -10934,16 +10938,16 @@ a {
 /*------------------------------------------------*/
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
-.wp-caption-text {
+.wp-caption-text, .image-caption {
   color: #575757;
   text-align: center; }
 
 .badge-image {
   background-position: top center !important;
   background-size: cover !important;
-  height: 100px;
-  width: 100px;
-  border-radius: 200px; }
+  height: 75px;
+  width: 75px;
+  border-radius: 150px; }
 
 #pageHeader {
   background: url("../img/page_header.jpg");
@@ -11007,6 +11011,9 @@ hr {
   padding-bottom: 2rem;
   border-bottom: solid 3px #2E5786;
   margin-bottom: 2rem; }
+  #memoriam .memorial .bio img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
 
 #professionals #quickLinks {
   padding: 10px 0;
@@ -11068,9 +11075,26 @@ hr {
     text-decoration: none; }
 
 #singleAttorney #contentSelector, #singleParalegal #contentSelector {
+  padding-left: 15px;
+  padding-right: 15px;
   border-top: solid 1px #575757;
   border-bottom: solid 1px #575757;
-  cursor: pointer; }
+  cursor: pointer;
+  font-family: "Merriweather", sans-serif;
+  color: #575757;
+  font-weight: bold; }
+  #singleAttorney #contentSelector .active, #singleParalegal #contentSelector .active {
+    color: #2E5786;
+    border-color: #2E5786 !important; }
+  #singleAttorney #contentSelector .nav-item, #singleParalegal #contentSelector .nav-item {
+    margin-right: 50px;
+    padding-bottom: 5px;
+    border-bottom: solid 2px transparent; }
+    #singleAttorney #contentSelector .nav-item:hover, #singleParalegal #contentSelector .nav-item:hover {
+      color: #2E5786;
+      border-color: #2E5786 !important; }
+    #singleAttorney #contentSelector .nav-item:last-of-type, #singleParalegal #contentSelector .nav-item:last-of-type {
+      margin-right: 0; }
 
 #services #practiceAreas #serviceLinks .service-link {
   border-bottom: solid 1px #cecece;
@@ -11089,13 +11113,6 @@ hr {
     text-decoration: none;
     font-size: 1.1rem;
     padding: 10px 0 10px 25px; }
-
-#serviceDetail #serviceSidebar .badge-image {
-  background-position: top center !important;
-  background-size: cover !important;
-  height: 75px;
-  width: 75px;
-  border-radius: 150px; }
 
 #serviceDetail #serviceSidebar hr {
   border-color: #575757; }

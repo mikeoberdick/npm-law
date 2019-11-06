@@ -47,8 +47,8 @@
 						$addy2 = get_field($office . '_address_line_2', 'option');
 						$phone = get_field($office . '_phone_number', 'option');
 						$fax = get_field($office . '_fax_number', 'option'); ?>
-						<p><?php echo $addy1 . ', ' . $addy2  ?></p>
-						<p><?php echo $phone . ' | ' . $fax  ?></p>
+						<p class = "mb-0"><?php echo $addy1 . ', ' . $addy2  ?></p>
+						<p><?php echo 'Phone: ' . $phone . ' | ' . 'Fax: ' . $fax  ?></p>
 					</div><!-- .address -->
 					<div id = "attorneyDetails">
 						<div class="row">
@@ -69,7 +69,7 @@
 								    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 								<?php endif; ?>
 							</div><!-- .col-md-6 -->
-							<div class="col-md-6">
+							<div class="col-md-5 offset-md-1">
 								<h3 class="h5 gray">Education</h3><!-- .h5 -->
 								<ul class = "pl-3">
 								<?php
@@ -78,7 +78,7 @@
 				                foreach($items as $item) {
 				                echo '<li>' . $item . '</li>'; } ?>
 								</ul>
-							</div><!-- .col-md-6 -->	
+							</div><!-- .col-md-5 -->	
 						</div><!-- .row -->
 					</div><!-- #attorneyDetails -->
 				</div><!-- .col-md-8 -->
@@ -99,7 +99,7 @@
 			?>
 
 			<nav class="row d-print-none">
-			  <div id="contentSelector" class="col-md-12 py-3 mb-3 nav nav-tabs d-flex justify-content-around align-items-center" role="tablist">
+			  <div id="contentSelector" class="col-md-12 py-3 mb-3 nav nav-tabs d-flex align-items-center" role="tablist">
 			  	<?php if( $bio ) { ?>
 			    <div class="text-center nav-item active" id="nav-bio-tab" data-toggle="tab" href="#nav-bio" role="tab" aria-controls="nav-bio" aria-selected="true">Biography</div>
 			    <?php } ?>

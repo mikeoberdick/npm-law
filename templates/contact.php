@@ -24,8 +24,8 @@
 						$phone = get_field('new_haven_phone_number', 'option');
 						$fax = get_field('new_haven_fax_number', 'option');
 						?>
-							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
-							<a href = ''><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
+							<p><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
+							<a href = '<?php echo get_site_url(); ?>/new-haven-ct'><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
 						</div><!-- .location -->
 
 						<div class="location contact-box mb-3 w-100">
@@ -37,8 +37,8 @@
 						$phone = get_field('hartford_phone_number', 'option');
 						$fax = get_field('hartford_fax_number', 'option');
 						?>
-							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
-							<a href = ''><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
+							<p><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
+							<a href = '<?php echo get_site_url(); ?>/hartford-ct'><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
 						</div><!-- .location -->
 
 						<div class="location contact-box mb-3 w-100">
@@ -50,8 +50,8 @@
 						$phone = get_field('fairfield_phone_number', 'option');
 						$fax = get_field('fairfield_fax_number', 'option');
 						?>
-							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
-							<a href = ''><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
+							<p><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
+							<a href = '<?php echo get_site_url(); ?>/fairfield-ct'><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
 						</div><!-- .location -->
 
 						<div class="location contact-box mb-3 w-100">
@@ -63,8 +63,8 @@
 						$phone = get_field('white_plains_phone_number', 'option');
 						$fax = get_field('white_plains_fax_number', 'option');
 						?>
-							<p class = ""><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
-							<a href = ''><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
+							<p<?php echo get_site_url(); ?>/new-haven-ct><?php echo 'Neubert, Pepe & Monteith, P.C.<br>' . $addy1 . '<br>' . $addy2 . '<br>Phone <a href ="tel:' . $phone . '">' . $phone . '</a>' . ' | Fax ' . $fax ?></p>
+							<a href = '<?php echo get_site_url(); ?>/white-plains-ny'><button role = 'button' class = 'mt-3 btn btn-primary light-blue-button'>Get Directions</button></a>
 						</div><!-- .location -->
 							
 					</div><!-- .col-md-5 -->

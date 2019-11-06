@@ -62,7 +62,7 @@
 		                foreach($items as $item) {
 		                echo '<li>' . $item . '</li>'; } ?>
 						</ul>
-					<a href = '/services'><button role = 'button' class = 'btn btn-primary light-blue-button text-uppercase mb-4'>Learn More About Our Services</button></a>
+					<a href = '<?php echo get_site_url(); ?>/services'><button role = 'button' class = 'btn btn-primary light-blue-button text-uppercase mb-4'>Learn More About Our Services</button></a>
 				</div><!-- .col-sm-12 -->
 			</div><!-- .row -->
 		</section><!-- .container -->
@@ -76,7 +76,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<p class = "mb-4"><?php the_field('recognition'); ?></p>
-					<a href = '/community'><button role = 'button' class = 'btn btn-primary light-blue-button text-uppercase'>Learn More About Our Community Efforts</button></a>
+					<a href = '<?php echo get_site_url(); ?>/community'><button role = 'button' class = 'btn btn-primary light-blue-button text-uppercase'>Learn More About Our Community Efforts</button></a>
 				</div><!-- .col-sm-12 -->
 			</div><!-- .row -->
 		</section><!-- .container -->
