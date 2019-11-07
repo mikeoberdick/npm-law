@@ -5,16 +5,17 @@
 		
 		<section class="container">
 			<div class="row mb-5">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<?php $image = get_field('image'); ?>
-					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-				</div><!-- .col-md-4 -->
-				<div class="col-md-8">
+					<div id = "imageWrapper" style = "background:url('<?php echo $image['url']; ?>');">
+					</div>
+				</div><!-- .col-md-3 -->
+				<div class="col-md-9">
 					<div class="row mb-3 no-gutters">
-						<div class="col-sm-5">
+						<div class="col-sm-6">
 							<h1 class="h4"><?php the_field('name'); ?></h1>
-						</div><!-- .col-sm-5 -->
-						<div class="col-sm-7 d-flex align-items-center justify-content-end">
+						</div><!-- .col-sm-6 -->
+						<div class="col-sm-6 d-flex align-items-center justify-content-end">
 							<h2 class="h5 gray d-inline-flex mr-4 mb-0"><?php the_field('title'); ?></h2><!-- .h5 gray -->
 							<div class="d-inline-flex links">
 								<a href="mailto:<?php the_field('email'); ?>"><i class="mr-2 fa fa-envelope-o" aria-hidden="true"></i></a>
@@ -39,7 +40,7 @@
 								<a target = "_blank" href="<?php echo $instagram; ?>"><i class="mr-2 fa fa-instagram" aria-hidden="true"></i></a>
 							<?php } ?>
 							</div><!-- .links -->
-						</div><!-- .col-sm-7 -->
+						</div><!-- .col-sm-6 -->
 					</div><!-- .row -->
 					<div class="address mb-3">
 						<?php $office = get_field('location')['value']; 
@@ -69,7 +70,7 @@
 								    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 								<?php endif; ?>
 							</div><!-- .col-md-6 -->
-							<div class="col-md-5 offset-md-1">
+							<div class="col-md-6">
 								<h3 class="h5 gray">Education</h3><!-- .h5 -->
 								<ul class = "pl-3">
 								<?php
@@ -81,7 +82,7 @@
 							</div><!-- .col-md-5 -->	
 						</div><!-- .row -->
 					</div><!-- #attorneyDetails -->
-				</div><!-- .col-md-8 -->
+				</div><!-- .col-md-9 -->
 			</div><!-- .row -->
 
 			<?php 

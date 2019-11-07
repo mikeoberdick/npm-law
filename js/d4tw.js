@@ -145,7 +145,7 @@ $('body').on('click', '#articles .year-choice', function(event) {
 
       // Run query
         get_articles($params);
-    });
+    }); 
 
 //end of file
 });

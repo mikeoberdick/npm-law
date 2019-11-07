@@ -74,7 +74,7 @@
 								</div>
 							</div><!-- .col -->
 							<div class="col d-flex flex-column title-wrapper">
-								<h2 class="h5"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<h2 class="h5"><a target = "_blank" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 								<p class = "mb-0"><?php the_excerpt(); ?></p>
 							</div><!-- .col -->
 						</div><!-- .post -->

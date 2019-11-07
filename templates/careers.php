@@ -53,7 +53,9 @@
 
 				<div class="position mb-3">
 					<h5 class = "gray mb-3"><?php echo $title; ?></h5>
-					<div><?php echo $details; ?></div>
+					<p><?php echo $details; ?></p>
+					<p class = "mb-1">Please provide CV and cover letter indicating interest, experience and salary requirements to:</p>
+					<p>Angie DiDomenico, Manager of Legal Administration, Neubert, Pepe & Monteith, P.C., 195 Church Street, 13th Floor, New Haven, CT 06510 or to <a href = "mailto:add@npmlaw.com">add@npmlaw.com</a>.</p>
 				</div>
 				<hr>
 				<?php endwhile; ?>

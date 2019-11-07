@@ -10871,7 +10871,10 @@ a {
   width: 215px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
   #headerSocial .social-link {
     margin-right: 10px; }
     #headerSocial .social-link:last-of-type {
@@ -11064,6 +11067,11 @@ hr {
     #professionals .professional .links i {
       font-size: 1.5rem; }
 
+#singleAttorney #imageWrapper, #singleParalegal #imageWrapper {
+  height: 100%;
+  background-size: cover !important;
+  background-position: top center !important; }
+
 #singleAttorney .links i, #singleParalegal .links i {
   font-size: 1.5rem; }
 
@@ -11169,8 +11177,8 @@ hr {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100px;
-    height: 100px; }
+    width: 75px;
+    height: 75px; }
 
 #news .post .title-wrapper a, #articles .post .title-wrapper a {
   text-decoration: none; }

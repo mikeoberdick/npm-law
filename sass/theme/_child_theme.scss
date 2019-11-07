@@ -80,6 +80,7 @@ a {
 #headerSocial {
 	width: 215px;
 	justify-content: space-between;
+	align-items: center;
 	.social-link {
 		margin-right: 10px;
 		&:last-of-type {
@@ -293,6 +294,11 @@ hr {
 }
 
 #singleAttorney, #singleParalegal {
+	#imageWrapper {
+		height: 100%;
+    	background-size: cover !important;
+    	background-position: top center !important;
+	}
 	.links {
 		i {
 			font-size: 1.5rem;
@@ -438,8 +444,8 @@ hr {
 				background: $light-gray;
 				justify-content: center;
 				align-items: center;
-				width: 100px;
-				height: 100px;
+				width: 75px;
+				height: 75px;
 			}
 		}
 		.title-wrapper {
