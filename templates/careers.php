@@ -21,9 +21,9 @@
 				</div><!-- .col-sm-12 -->
 			</div><!-- .row -->
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-sm-12 d-flex flex-column d-md-block">
 					<?php $contact = get_field('contact_box'); ?>
-					<div class="contact-box float-right">
+					<div class="contact-box float-md-right mt-3 mb-md-0 order-2 order-md-0">
 						<h5>Contact</h5>
 						<p><a href = "<?php echo 'mailto:' . $contact['email']; ?>"><?php echo $contact['name']; ?></a><br><?php echo $contact['title']; ?></p>
 						<p><?php echo $contact['address']; ?></p>

@@ -37,9 +37,9 @@
 		        			?>
 
 		        		
-		        			<div class="author <?php if ($count == 1) {echo 'd-flex single-author';} elseif ($count == 2) {echo 'two-authors d-flex col-md-6';} else {echo 'three-authors col-md-4';} ?>">
+		        			<div class="author <?php if ($count == 1) {echo 'd-flex single-author flex-wrap flex-sm-nowrap text-center text-sm-left justify-content-center justify-content-sm-start';} elseif ($count == 2) {echo 'two-authors d-flex col-md-6';} else {echo 'three-authors col-md-4';} ?>">
 
-			        			<div class = "author-details d-flex flex-column <?php if ($count == 3) {echo 'float-left';} ?> ">
+			        			<div class = "author-details d-flex flex-column mb-3 <?php if ($count == 3) {echo 'float-left';} ?> ">
 			        				<img class = "mb-2" src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
 			            			<h6 class = "gray"><?php echo $name; ?></h6>
 			            			<div class="links">

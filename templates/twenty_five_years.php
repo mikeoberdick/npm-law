@@ -11,7 +11,7 @@
 				</div><!-- .col-sm-12 -->
 			</div><!-- .row -->
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-6 mb-3 mb-md-0">
 					<?php the_field('copy'); ?>
 				</div>
 				<div class="col-md-6">

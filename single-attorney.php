@@ -5,12 +5,12 @@
 		
 		<section class="container">
 			<div class="row mb-5">
-				<div class="col-md-3">
+				<div class="col-sm-3">
 					<?php $image = get_field('image'); ?>
 					<div id = "imageWrapper" style = "background:url('<?php echo $image['url']; ?>');">
 					</div>
-				</div><!-- .col-md-3 -->
-				<div class="col-md-9">
+				</div><!-- .col-sm-3 -->
+				<div class="col-sm-9">
 					<div id = "attorneyTitle" class="row mb-3 no-gutters">
 						<div class="col-sm-6">
 							<h1 class="h4"><?php the_field('name'); ?></h1>

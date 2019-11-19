@@ -49,7 +49,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<img id = "headerLogo" src = "<?php echo $logo['url']; ?>" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>">
 				</a>	
 				</div><!-- .col-md-8 -->
-				<div class="col-md-4 d-flex flex-column align-items-end">
+				<div class="col-md-4 d-flex flex-column align-items-center align-items-md-end">
 					<div id="headerSocial" class = "d-inline-flex mb-3">
 						<span class = "mr-2">CONTACT</span>
 						<div id="socialLinks" class = "d-inline-flex align-center">
@@ -74,10 +74,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<nav class="navbar navbar-expand-md">
 
-			<div class="container">
+			<div class="container justify-content-center">
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span class = "mobileToggle"><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
+					<span class = "mobileToggle text-white"><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
 				</button>
 					
 				<!-- The WordPress Menu goes here -->

@@ -47,6 +47,7 @@
 					?>
 					<p class = "text-center small"><?php echo $addy1 . '<br>' . $addy2 . '<br>Phone: ' . $phone ?></p>
 				</div><!--col-sm-3 -->
+				
 				<div class="col-6 col-md-3">
 					<h6 class = "location text-center">White Plains</h6>
 					<?php
@@ -58,8 +59,9 @@
 					<p class = "text-center small"><?php echo $addy1 . '<br>' . $addy2 . '<br>Phone: ' . $phone ?></p>
 				</div><!--col-sm-3 -->
 			<?php } else { ?>
+
 				<div class="col-sm-12">
-					<p class = "text-center">New Haven <span class = "mx-3">|</span> Hartford <span class = "mx-3">|</span> Fairfield <span class = "mx-3">|</span> White Plains</p>
+					<p class = "text-center d-flex justify-content-center align-items-center">New Haven <span class = "mx-3">|</span> Hartford <span class = "mx-3">|</span> Fairfield <span class = "mx-3">|</span> White Plains</p>
 				</div><!-- .col-sm-12 -->
 			<?php } ?>
 		</div><!-- .row -->

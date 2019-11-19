@@ -21,7 +21,7 @@
 				<?php $images = get_field('organizations'); ?>
 				<?php if( $images ): ?>
         			<?php foreach( $images as $image ): ?>
-            			<div class="col-md-3">
+            			<div class="col-md-3 text-center mb-2">
             				<a target = "_blank" href="<?php echo $image['description']; ?>">
             				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
             			</div><!-- .col-md-3 -->

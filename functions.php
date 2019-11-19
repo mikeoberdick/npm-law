@@ -406,8 +406,9 @@ function psc_filter_news_posts() {
     ];
     $qry = new WP_Query($args);
     ob_start();
-        if ($qry->have_posts()) :
-            while ($qry->have_posts()) : $qry->the_post(); ?>
+        if ($qry->have_posts()) : ?>
+            <div class = "col-sm-12">
+            <?php while ($qry->have_posts()) : $qry->the_post(); ?>
 
                 <div class="post row border-bottom pb-3 mb-3">
                             <div class="col date-wrapper">
@@ -452,8 +453,9 @@ function psc_filter_article_posts() {
     ];
     $qry = new WP_Query($args);
     ob_start();
-        if ($qry->have_posts()) :
-            while ($qry->have_posts()) : $qry->the_post(); ?>
+        if ($qry->have_posts()) : ?>
+            <div class = "col-sm-12">
+           <?php while ($qry->have_posts()) : $qry->the_post(); ?>
 
                 <div class="post row border-bottom pb-3 mb-3">
                             <div class="col date-wrapper">

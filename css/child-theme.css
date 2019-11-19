@@ -10860,7 +10860,8 @@ a {
   color: #fff !important;
   background-color: #2E5786 !important;
   border: 0;
-  border-radius: 3px; }
+  border-radius: 3px;
+  white-space: normal; }
   .light-blue-button:hover {
     background-color: #213e60 !important; }
 
@@ -10916,6 +10917,8 @@ a {
     vertical-align: 0.155em; }
   .navbar .dropdown-menu {
     border-radius: 0; }
+  .navbar .container {
+    max-width: 1000px; }
 
 #headerSearch {
   width: 215px;
@@ -10935,15 +10938,13 @@ a {
 /*------------------------------------------------*/
 /*-------------------[MENU]-----------------------*/
 /*------------------------------------------------*/
-.mobileToggle {
-  color: #22233F; }
-
 /*------------------------------------------------*/
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
 .wp-caption-text, .image-caption {
   color: #575757;
-  text-align: center; }
+  text-align: center;
+  margin-top: 10px; }
 
 .badge-image {
   background-position: top center !important;
@@ -10971,6 +10972,12 @@ a {
           box-shadow: #22233fb8 0 0 0 500px inset; }
   #pageHeader h1 {
     color: white; }
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    #pageHeader {
+      height: 250px; } }
+  @media (max-width: 991.98px) {
+    #pageHeader {
+      height: 150px; } }
 
 .site-main {
   margin-top: 2rem;
@@ -10979,8 +10986,10 @@ a {
 .contact-box {
   background: #f5f5f5;
   padding: 20px;
-  min-width: 250px;
-  margin-left: 1rem; }
+  min-width: 250px; }
+  @media (min-width: 768px) {
+    .contact-box {
+      margin-left: 1rem; } }
 
 hr {
   border-top: solid 3px #2E5786; }
@@ -11001,6 +11010,9 @@ hr {
             flex-direction: column;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
+    @media (max-width: 991.98px) {
+      #about #serveAndRepresent #clientsList {
+        height: auto; } }
     #about #serveAndRepresent #clientsList li {
       color: #575757;
       font-size: 1.2rem;
@@ -11036,14 +11048,6 @@ hr {
   #professionals #quickLinks .entriesAbsent {
     color: #c3c0c0; }
 
-#professionals .professionals-left, #professionals .professionals-right {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 48%;
-          flex: 0 0 48%; }
-
-#professionals .professionals-right {
-  margin-left: 4%; }
-
 #professionals .letterAnchor {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11071,6 +11075,11 @@ hr {
   height: 100%;
   background-size: cover !important;
   background-position: top center !important; }
+  @media (max-width: 767.98px) {
+    #singleAttorney #imageWrapper, #singleParalegal #imageWrapper {
+      min-height: 350px;
+      background-repeat: no-repeat !important;
+      background-size: contain !important; } }
 
 #singleAttorney .links i, #singleParalegal .links i {
   font-size: 1.5rem; }
@@ -11193,7 +11202,8 @@ hr {
   text-align: justify; }
 
 .single-news hr, .single-article hr {
-  border-color: #575757; }
+  border-color: #575757;
+  clear: both; }
 
 .single-news .author p, .single-article .author p {
   text-align: left; }
@@ -11270,5 +11280,3 @@ hr {
 /*------------------------------------------------*/
 /*--------------[RESPONSIVE/UTILITIES]------------*/
 /*------------------------------------------------*/
-.hidden {
-  display: none; }

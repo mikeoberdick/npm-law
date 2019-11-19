@@ -16,7 +16,7 @@
 			</div><!-- .row -->
 
 			<div class="row">
-				<div class = "professionals-left col">
+				<div class = "professionals-left col-sm-12 col-md-6">
 					<?php if ( is_page('attorneys') ) {
 					//Setup the query args for wp query
 						$args = [
@@ -81,7 +81,7 @@
 						</div><!-- .links -->
 					</div><!-- .professional -->
 					<?php if ( is_page('attorneys') && $count == (int) ( $totalPosts / 2 ) ) {
-						echo '</div><div class = "professionals-right col">';
+						echo '</div><div class = "professionals-right col-sm-12 col-md-6">';
 					} ?>
 					<?php $count++; ?>
 				<?php endwhile; endif; ?>

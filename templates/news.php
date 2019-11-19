@@ -9,7 +9,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<h1 class="h4 mb-3">
-						Articles & Advisories
+						In The News
 					</h1>
 					<?php
 					$args = array(

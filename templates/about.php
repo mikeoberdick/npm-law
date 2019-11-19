@@ -34,9 +34,9 @@
 					<h2 class = "h4 mt-3 mb-3 gray">Founding Principals</h2>
 				</div><!-- .col-sm-12 -->
 			</div><!-- .row -->
-			<div id = "principals" class = "d-flex">
+			<div id = "principals" class = "d-flex flex-wrap flex-sm-nowrap">
 				<?php while ( have_rows('founding_principals') ) : the_row(); ?>
-				<div class = "principal">
+				<div class = "principal mb-3">
 					<?php $image = get_sub_field('image'); ?>
 					<img class = "mb-3" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 					<h5 class = "pb-3 text-center"><?php the_sub_field('name'); ?></h5>
